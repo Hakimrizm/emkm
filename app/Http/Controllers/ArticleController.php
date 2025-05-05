@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {
@@ -28,7 +29,16 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required'
+        ]);
+        
+        $validated['slug'] = Str::slug($validated['title']) . '-' . Str::random(5);
+
+        Article::create($validated);
+
+        return redirect('/')->with('success', 'Article has been added.');
     }
 
     /**
