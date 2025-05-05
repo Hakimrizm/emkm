@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card bg-danger">
@@ -67,6 +67,64 @@
                                     {{ __('Register') }}
                                 </button>
                             </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
+
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="fw-bold m-0">Register</h4>
+                        <span class="text-muted">Belum punya akun? <a href="/login">Login</a></span>
+                    </div>
+
+                    <form action="{{ route('register') }}" method="POST">
+                        @csrf
+                        <div class="mb-3 mt-4">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Rezis" name="name" required>
+                                <label for="name">Masukan nama anda</label>
+                            </div>
+                            @error('name')
+                                <span class="text-danger ms-2">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="mb-3 mt-4">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" name="email" required>
+                                <label for="email">Alamat Email</label>
+                            </div>
+                            @error('email')
+                                <span class="text-danger ms-2">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="" name="password" required>
+                                <label for="password">Password</label>
+                            </div>
+                            @error('password')
+                                <span class="text-danger ms-2">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="password_confirmation" placeholder="" name="password_confirmation" required>
+                                <label for="password_confirmation">Konfirmasi Password</label>
+                            </div>
+                            @error('password')
+                                <span class="text-danger ms-2">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary" style="width: 100%">Register</button>
                         </div>
                     </form>
                 </div>

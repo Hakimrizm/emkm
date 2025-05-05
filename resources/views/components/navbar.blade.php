@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-secondary-subtle shadow-sm position-sticky top-0 z-3">
+<nav class="navbar navbar-expand-lg bg-secondary-subtle position-sticky top-0 z-3">
     <div class="container">
         <a class="navbar-brand" href="#">E-mkm</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link {{ request()->routeIs('') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Tentang Kami</a>
@@ -30,12 +30,12 @@
                 @guest
                     @if (Route::has('login'))    
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ route('login') }}">Sign In</a>
+                            <a class="nav-link {{ request()->routeIs('login') ? 'active' : '' }} aria-current="page" href="{{ route('login') }}">Login</a>
                         </li>
                     @endif
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Sign Up</a>
+                            <a class="nav-link {{ request()->routeIs('register') ? 'active' : '' }}" href="{{ route('register') }}">Register</a>
                         </li>
                     @endif
                 @else
