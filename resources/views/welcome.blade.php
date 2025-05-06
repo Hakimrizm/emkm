@@ -42,7 +42,7 @@
 
     <div class="row mb-5">
         <div class="col-md-6">
-            <div class="card">
+            <div class="card h-100">
                 <div class="card-body">
                     <h3 class="fw-semibold">Visi</h3>
                     <p>Mewujudkan UMKM Indonesia yang melek digital dan cerdas dalam mengelola keuangan usaha.</p>
@@ -50,7 +50,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card">
+            <div class="card h-100">
                 <div class="card-body">
                     <h3 class="fw-semibold">Misi</h3>
                     <ul class="list-group">
