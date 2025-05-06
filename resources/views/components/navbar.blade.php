@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-secondary-subtle position-sticky top-0 z-3">
+<nav class="navbar navbar-expand-lg navbar-dark position-fixed top-0 start-0 end-0 z-3">
     <div class="container">
         <a class="navbar-brand" href="#">E-mkm</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

@@ -15,12 +15,12 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('/css/guest.css') }}">
+    <script src="{{ asset('/js/navbarScroll.js') }}"></script>
 </head>
 <body>
     <div id="app">
-        @include('components.navbar')
-
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>
