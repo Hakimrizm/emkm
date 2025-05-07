@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row justify-content-center mt-4">
         <div class="col-md-5">
-            <div class="card">
+            <div class="card shadow">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="fw-bold m-0">Login</h4>
@@ -57,7 +57,7 @@
                             </a>
                         </div>
                         <div class="mb-3 text-center">
-                            <span class="text-muted">Belum punya akun? <a href="/register">Buat Akun</a></span>
+                            <span class="text-muted">Belum punya akun? <a href="{{ route('register') }}">Buat Akun</a></span>
                         </div>
                     </form>
                 </div>

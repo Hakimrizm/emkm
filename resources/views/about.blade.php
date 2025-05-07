@@ -49,7 +49,7 @@
         <div class="container">
             <div class="row">
                 {{-- Mission --}}
-                <div class="col-md-4">
+                <div class="col-md-4 mb-2">
                     <div class="card h-100">
                         <div class="card-body">
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-crosshair2" viewBox="0 0 16 16">
@@ -67,7 +67,7 @@
                 </div>
     
                 {{-- Vision --}}
-                <div class="col-md-4">
+                <div class="col-md-4 mb-2">
                     <div class="card h-100">
                         <div class="card-body">
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
@@ -103,11 +103,11 @@
     <div style="padding: 60px 0">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 text-center">
+                <div class="col-md-4 text-center mb-2">
                     <h1 class="fw-semibold" style="font-size: 4.5em">100+</h1>
                     <p class="text-extra-muted fs-4">Jumlah UMKM yang terbantu</p>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-md-4 text-center mb-2">
                     <h1 class="fw-semibold" style="font-size: 4.5em">200+</h1>
                     <p class="text-extra-muted fs-4">Testimoni pengguna</p>
                 </div>
@@ -148,7 +148,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 mb-3">
                     <div style="width: 100%; height: 250px;" class="rounded overflow-hidden">
                         <img src="{{ asset('/images/faces/1.jpg') }}" alt="" width="100%">
                     </div>
@@ -178,7 +178,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 mb-3">
                     <div style="width: 100%; height: 250px;" class="rounded overflow-hidden">
                         <img src="{{ asset('/images/faces/2.jpg') }}" alt="" width="100%">
                     </div>
@@ -208,7 +208,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 mb-3">
                     <div style="width: 100%; height: 250px;" class="rounded overflow-hidden">
                         <img src="{{ asset('/images/faces/3.jpg') }}" alt="" width="100%">
                     </div>
@@ -238,7 +238,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 mb-3">
                     <div style="width: 100%; height: 250px;" class="rounded overflow-hidden">
                         <img src="{{ asset('/images/faces/4.jpg') }}" alt="" width="100%">
                     </div>
