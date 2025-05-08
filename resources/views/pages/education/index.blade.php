@@ -1,0 +1,80 @@
+@extends('layouts.app')
+
+@section('content')
+@include('components.navbar')
+
+<section id="hero-about" class="hero-section">
+    <div class="d-flex justify-content-center align-items-center" style="height: 100%">
+        <div class="text-white text-center">
+            <h1 style="font-size: 3em;" class="fw-bold">Edukasi</h1>
+            <p style="font-size: 1.2em;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis ratione itaque iusto laborum sint voluptates.</p>
+        </div>
+    </div>
+</section>
+
+<div class="container" style="padding: 60px 0">
+    <div class="row">
+        <div class="col-md-8">
+            <div style="width: 100%; height: 400px;" class="overflow-hidden rounded">
+                <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" width="100%">
+            </div>
+
+            <h4 class="mt-3 fw-semibold">Judul Article Edukasi Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+            <p class="text-muted mb-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam error similique illo, et ullam adipisci dolorum nobis asperiores ipsum eius...</p>
+            <span class="text-muted">7 days ago by Admin</span>
+        </div>
+
+        <div class="col-md-4">
+            <h4 class="fw-semibold">Popular Article</h4>
+
+            <div class="mb-3 d-flex align-items-center" style="flex-basis: 0;">
+                <div class="rounded overflow-hidden" style="width: 150px; flex-shrink: 0;">
+                    <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" style="width: 150px; height: 100px; object-fit: cover;">
+                </div>
+                <div class="ms-2" style="flex: 1;">
+                    <h5 class="fw-semibold m-0">Judul Article Edukasi Lorem ipsum asd jak...</h5>
+                    <span class="text-muted mt-2 d-block">2 Days Ago by Admin</span>
+                </div>
+            </div>
+            <div class="mb-3 d-flex align-items-center" style="flex-basis: 0;">
+                <div class="rounded overflow-hidden" style="width: 150px; flex-shrink: 0;">
+                    <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" style="width: 150px; height: 100px; object-fit: cover;">
+                </div>
+                <div class="ms-2" style="flex: 1;">
+                    <h5 class="fw-semibold m-0">Judul artikel populer</h5>
+                    <span class="text-muted mt-2 d-block">2 Days Ago by Admin</span>
+                </div>
+            </div>
+            <div class="mb-3 d-flex align-items-center" style="flex-basis: 0;">
+                <div class="rounded overflow-hidden" style="width: 150px; flex-shrink: 0;">
+                    <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" style="width: 150px; height: 100px; object-fit: cover;">
+                </div>
+                <div class="ms-2" style="flex: 1;">
+                    <h5 class="fw-semibold m-0">Judul artikel populer</h5>
+                    <span class="text-muted mt-2 d-block">2 Days Ago by Admin</span>
+                </div>
+            </div>
+            <div class="mb-3 d-flex align-items-center" style="flex-basis: 0;">
+                <div class="rounded overflow-hidden" style="width: 150px; flex-shrink: 0;">
+                    <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" style="width: 150px; height: 100px; object-fit: cover;">
+                </div>
+                <div class="ms-2" style="flex: 1;">
+                    <h5 class="fw-semibold m-0">Judul artikel populer</h5>
+                    <span class="text-muted mt-2 d-block">2 Days Ago by Admin</span>
+                </div>
+            </div>
+            <div class="mb-3 d-flex align-items-center" style="flex-basis: 0;">
+                <div class="rounded overflow-hidden" style="width: 150px; flex-shrink: 0;">
+                    <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" style="width: 150px; height: 100px; object-fit: cover;">
+                </div>
+                <div class="ms-2" style="flex: 1;">
+                    <h5 class="fw-semibold m-0">Judul artikel populer</h5>
+                    <span class="text-muted mt-2 d-block">2 Days Ago by Admin</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@include('components.footer')
+@endsection

@@ -16,7 +16,7 @@
                     Mudah & cepat untuk kamu, Sang Pengusaha. Karena Semua Pengusaha Hebat Pernah Jadi Pemula.
                 </p>
                 <a class="btn btn-info"
-                    href="/register"
+                    href="{{ route('register') }}"
                     style="
                         color: white;
                         padding: 15px 30px;
@@ -33,7 +33,7 @@
 </div>
 
 {{-- Visi & Misi --}}
-<section class="container py-5" id="tentang-kami">
+<section class="container" id="tentang-kami" style="padding: 60px 0">
     {{-- Judul --}}
     <div class="text-center mb-5">
         <h1 class="fw-bold">Tentang Kami</h1>
@@ -81,7 +81,7 @@
 
 {{-- Fitur Unggulan --}}
 <section style="background-color: #d5dee6">
-    <div class="container py-5">
+    <div class="container" style="padding: 60px 0">
         {{-- Judul --}}
         <div class="text-center mb-5">
             <h1 class="fw-bold">Fitur</h1>
@@ -132,46 +132,12 @@
 </section>
 
 {{-- Testimoni --}}
-<section class="container py-5">
+<section class="container" style="padding: 60px 0">
     {{-- Judul --}}
     <div class="text-center mb-5">
         <h1 class="fw-bold">Apa kata pengguna?</h1>
     </div>
 
-    {{-- <div class="row justify-content-center position-relative">
-        <div class="col-md-6">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, quae architecto. Rem, rerum neque natus voluptate quaerat, delectus incidunt doloribus eum veritatis maxime nam iste repudiandae obcaecati tenetur quos quasi?</p>
-                    <div class="d-flex align-items-center">
-                        <div style="height: 70px; width: 70px" class="overflow-hidden rounded-circle me-3">
-                            <img src="{{ asset('/images/faces/5.jpg') }}" alt="" width="100%">
-                        </div>
-                        <div  class="d-flex flex-column">
-                            <span>Rina Addrina</span>
-                            <span class="text-muted">CEO OF warung sembako</span>
-                        </div>
-                        <div class="d-flex align-items-center ms-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-star-fill text-warning me-1" viewBox="0 0 16 16">
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                            </svg>
-                            <span class="text-muted">4/5</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button class="btn btn-light border position-absolute start-0 top-" style="width: 50px; height: 50px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
-            </svg>
-        </button>
-        <button class="btn btn-light border position-absolute end-0" style="width: 50px; height: 50px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-            </svg>
-        </button>
-    </div> --}}
     <div id="testimonialCarousel" class="carousel slide position-relative" data-bs-ride="carousel">
         <div class="carousel-inner">
             <!-- Item 1 -->
@@ -204,20 +170,20 @@
                 </div>
             </div>
     
-            <!-- Item 2 (copy structure yang sama) -->
+            <!-- Item 2 -->
             <div class="carousel-item">
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                         <div class="card shadow-sm">
                             <div class="card-body">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quod quaerat id, in aliquam saepe sed doloremque maiores magnam quo qui officiis quis placeat quia nulla dolorem nostrum cupiditate fugiat.</p>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis, veritatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci voluptas corrupti neque, laborum beatae ut?</p>
                                 <div class="d-flex align-items-center">
                                     <div style="height: 70px; width: 70px;" class="overflow-hidden rounded-circle me-3">
-                                        <img src="{{ asset('/images/faces/5.jpg') }}" alt="" width="100%" />
+                                        <img src="{{ asset('/images/faces/1.jpg') }}" alt="" width="100%" />
                                     </div>
                                     <div class="d-flex flex-column">
-                                        <span>Rina Addrina</span>
-                                        <span class="text-muted">CEO OF warung sembako</span>
+                                        <span>Riki Adrino</span>
+                                        <span class="text-muted">CEO OF Mamang Cuanki</span>
                                     </div>
                                     <div class="d-flex align-items-center ms-auto">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-star-fill text-warning me-1" viewBox="0 0 16 16">

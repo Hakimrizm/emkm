@@ -1,5 +1,5 @@
 <footer>
-    <div class="bg-info p-3 text-white">
+    <div class="bg-dark p-3 text-white">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <h5 class="m-0">Ikuti kami di social media</h5>
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div style="background-color: #d5dee6;">
+    <div style="background-color: #e3e5e7;">
         <div class="container py-4">
             <div class="row">
                 {{-- Deskripsi Aplikasi --}}
@@ -59,7 +59,7 @@
 
             {{-- Copyright --}}
         </div>
-        <div class="bg-info p-3 text-white text-center mt-4">
+        <div class="bg-dark p-3 text-white text-center mt-4">
             <h6 class="m-0">&copy; {{ date('Y') }} E-MKM. All rights reserved.</h6>
         </div>
     </div>
