@@ -21,6 +21,9 @@ Route::get('/tentang-kami', [GuestInterfaceController::class, 'about']);
 Route::get('/edukasi', function() {
     return view('pages.education.index');
 })->name('education');
+Route::get('/edukasi/detail', function(){
+    return view('pages.education.education');
+})->name("education.detail");
 
 Auth::routes();
 

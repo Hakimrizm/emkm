@@ -1,0 +1,53 @@
+@extends('layouts.app')
+
+@section('content')
+
+<span class="text-center">
+    <h1 style="font-size: 3em" class="pt-3">halaman article</h1>
+    <p style="animation: alternate">Est.2025</p>
+</span>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <img src="{{ asset('/images/bg/bg.jpg') }}" width="500px" class="pb-3" alt="background">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero quae repellendus optio nobis numquam, nesciunt repellat vitae eaque deserunt soluta libero error sunt quam mollitia doloribus voluptatibus sit? Nostrum! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste dolorum quae eligendi ex architecto! Ratione, a maxime. Facilis magni repellat et id saepe quibusdam. Sequi, vel voluptates. Iusto, dicta quisquam?</p>
+        </div>
+    </div>
+</div>
+
+<section class="container py-3" width="300px">
+    <div class="row justify-content-center">
+        <h1 class="text-center">EDUCATION</h1>
+        <div class="col-md-8">
+            <div class="card" style="background-color: aqua">
+                <div class="card-body">
+                    <p class="pt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa dolores possimus, nostrum eum temporibus repellat eaque saepe suscipit ut! Nemo adipisci voluptatum sunt inventore incidunt nam minus natus! Asperiores, qui. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores excepturi consectetur omnis saepe placeat quia quae dignissimos odio error necessitatibus distinctio iusto temporibus ex, laudantium, nemo accusamus, aliquam iure qui.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card bg-secondary">
+                <div class="card-body text-white">
+                    <h1>Our Information</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam mollitia velit aperiam fugiat, fuga placeat est incidunt dolore repellat atque officiis ducimus, quos accusantium nesciunt eveniet odio rerum aliquam obcaecati? Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nemo dignissimos obcaecati, delectus a sint quis ipsum, sunt nulla perspiciatis rerum iure maiores libero modi beatae laborum repellat, iusto labore.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+        <h2 style="margin-top: auto">HALAMAN KE 2</h2>
+    <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae excepturi consequuntur quasi repudiandae molestiae dolor suscipit dolore ratione, reprehenderit quisquam enim praesentium cum voluptate possimus sint ad recusandae cupiditate alias? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, possimus blanditiis in ullam totam officia, quidem dignissimos autem minima illum cumque, dolores expedita. Voluptate perferendis eveniet sunt, cum quod omnis.</p>
+        </div>
+    </div>
+</div>
+@endsection
