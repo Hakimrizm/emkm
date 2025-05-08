@@ -47,6 +47,16 @@
         <div class="col-md-8">
         <h2 style="margin-top: auto">HALAMAN KE 2</h2>
     <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae excepturi consequuntur quasi repudiandae molestiae dolor suscipit dolore ratione, reprehenderit quisquam enim praesentium cum voluptate possimus sint ad recusandae cupiditate alias? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, possimus blanditiis in ullam totam officia, quidem dignissimos autem minima illum cumque, dolores expedita. Voluptate perferendis eveniet sunt, cum quod omnis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, ex. A recusandae incidunt, ipsa vitae aut quas, natus atque dolorum voluptatem non consectetur praesentium dolore! Eaque nam repudiandae repellat Lorem   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque excepturi quidem veniam sit consequatur laborum labore dolore aut esse, porro, totam, architecto incidunt a harum sint possimus voluptatibus? Sequi.</p>
+    <h3 class="" style="border: 3px solid gray"></h3>
+
+    <div class="container">
+    <h2 style="margin-top: 5%">LIST APA YAH</h2>
+    <ol>
+        <li style="font-size: auto">KHAY</li>
+        <li>KINGGGG</li>
+        <li>ANJAAYYY</li>
+    </ol>
         </div>
     </div>
 </div>
