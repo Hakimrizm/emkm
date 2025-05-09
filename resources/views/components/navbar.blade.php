@@ -10,7 +10,7 @@
                     <a class="nav-link {{ request()->routeIs('') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#tentang-kami">Tentang Kami</a>
+                    <a class="nav-link" href="{{ route('about') }}">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('education') }}">Edukasi</a>

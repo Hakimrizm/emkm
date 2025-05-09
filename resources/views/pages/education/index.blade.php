@@ -76,5 +76,88 @@
     </div>
 </div>
 
+<section class="container mt-3" style="padding: 60px 0">
+    <div class="row justify-content-evenly">
+        <div class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="h-100">
+                        <div class="w-100 overflow-hidden rounded mb-2">
+                            <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" width="100%">
+                        </div>
+                        <h5 class="mb-2">Judul article asd asd asd asdads...</h5>
+                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, possimus!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="h-100">
+                        <div class="w-100 overflow-hidden rounded mb-2">
+                            <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" width="100%">
+                        </div>
+                        <h5 class="mb-2">Judul article asd asd asd asdads...</h5>
+                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, possimus!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="h-100">
+                        <div class="w-100 overflow-hidden rounded mb-2">
+                            <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" width="100%">
+                        </div>
+                        <h5 class="mb-2">Judul article asd asd asd asdads...</h5>
+                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, possimus!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="h-100">
+                        <div class="w-100 overflow-hidden rounded mb-2">
+                            <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" width="100%">
+                        </div>
+                        <h5 class="mb-2">Judul article asd asd asd asdads...</h5>
+                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, possimus!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="h-100">
+                        <div class="w-100 overflow-hidden rounded mb-2">
+                            <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" width="100%">
+                        </div>
+                        <h5 class="mb-2">Judul article asd asd asd asdads...</h5>
+                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, possimus!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="h-100">
+                        <div class="w-100 overflow-hidden rounded mb-2">
+                            <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" width="100%">
+                        </div>
+                        <h5 class="mb-2">Judul article asd asd asd asdads...</h5>
+                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, possimus!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @include('components.footer')
 @endsection

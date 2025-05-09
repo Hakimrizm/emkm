@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [GuestInterfaceController::class, 'welcome']);
-Route::get('/tentang-kami', [GuestInterfaceController::class, 'about']);
+Route::get('/tentang-kami', [GuestInterfaceController::class, 'about'])->name('about');
 Route::get('/edukasi', function() {
     return view('pages.education.index');
 })->name('education');
