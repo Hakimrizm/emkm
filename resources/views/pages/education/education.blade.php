@@ -2,8 +2,20 @@
 
 @section('content')
 
-<nav class="navbar" style="background-color: #e3f2fd;" data-bs-theme="light">
-  </nav>
+<ul class="nav justify-content-end bg-dark">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Menu</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page">Disabled</a>
+    </li>
+</ul>
 
 <span class="text-center">
     <h1 style="font-size: 3em" class="pt-3">halaman article</h1>
@@ -51,7 +63,7 @@
         <h2 style="margin-top: auto">HALAMAN KE 2</h2>
     <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae excepturi consequuntur quasi repudiandae molestiae dolor suscipit dolore ratione, reprehenderit quisquam enim praesentium cum voluptate possimus sint ad recusandae cupiditate alias? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, possimus blanditiis in ullam totam officia, quidem dignissimos autem minima illum cumque, dolores expedita. Voluptate perferendis eveniet sunt, cum quod omnis.</p>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, ex. A recusandae incidunt, ipsa vitae aut quas, natus atque dolorum voluptatem non consectetur praesentium dolore! Eaque nam repudiandae repellat Lorem   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque excepturi quidem veniam sit consequatur laborum labore dolore aut esse, porro, totam, architecto incidunt a harum sint possimus voluptatibus? Sequi.</p>
-    <h3 class="" style="border: 3px solid gray"></h3>
+    <h3 class="" style="border: 3px solid rgb(255, 255, 255)"></h3>
 
     <div class="list-group">
         <a href="#" class="list-group-item list-group-item-action active" aria-current="true" style="font-size: medium">
@@ -63,7 +75,9 @@
         <a href="#" class="list-group-item list-group-item-action disabled" aria-disabled="true">Kayaknya ini penutup</a>
       </div>
       <h3 class="" style="border: 3px solid gray"></h3>
+      <div class="row justify-content-center">
       <img src="{{ ('/images/bg/teamwork.jpg')}}" width="600px" alt="Teamwork Images" class="pb-3">
+    </div>
       <p style="margin-top: 5px">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, laborum quibusdam beatae nulla ut sapiente dolore aperiam consequatur vitae non iste, facere pariatur nesciunt qui magni eligendi distinctio molestias quaerat?</p>
       <div class="form-floating">
         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
