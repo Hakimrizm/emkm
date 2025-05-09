@@ -2,21 +2,6 @@
 
 @section('content')
 
-<ul class="nav justify-content-end bg-dark">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Menu</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page">Disabled</a>
-    </li>
-</ul>
-
 <span class="text-center">
     <h1 style="font-size: 3em" class="pt-3">halaman article</h1>
     <p style="animation: alternate">Est.2025</p>
