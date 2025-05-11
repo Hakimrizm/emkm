@@ -108,6 +108,8 @@
             </div>
         @endforeach
     </div>
+
+    {{ $articles->links() }}
 </section>
 
 @include('components.footer')

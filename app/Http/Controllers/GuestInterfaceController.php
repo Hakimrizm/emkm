@@ -17,7 +17,7 @@ class GuestInterfaceController extends Controller
 
     public function education() {
         return view('pages.education.index', [
-            'articles' => Article::latest()->get()
+            'articles' => Article::latest()->paginate(9) // withQueryString
         ]);
     }
 }
