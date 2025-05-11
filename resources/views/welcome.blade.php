@@ -33,7 +33,7 @@
 </div>
 
 {{-- Visi & Misi --}}
-<section class="container" id="tentang-kami" style="padding: 60px 0">
+<section class="container py-5" id="tentang-kami">
     {{-- Judul --}}
     <div class="text-center mb-5">
         <h1 class="fw-bold">Tentang Kami</h1>
@@ -81,7 +81,7 @@
 
 {{-- Fitur Unggulan --}}
 <section style="background-color: #d5dee6">
-    <div class="container" style="padding: 60px 0">
+    <div class="container py-5">
         {{-- Judul --}}
         <div class="text-center mb-5">
             <h1 class="fw-bold">Fitur</h1>
@@ -132,7 +132,7 @@
 </section>
 
 {{-- Testimoni --}}
-<section class="container" style="padding: 60px 0">
+<section class="container py-5">
     {{-- Judul --}}
     <div class="text-center mb-5">
         <h1 class="fw-bold">Apa kata pengguna?</h1>
@@ -217,7 +217,7 @@
     </div>
 </section>
 
-<section class="container" style="padding: 60px 0">
+<section class="container py-5">
     {{-- Judul --}}
     <div class="text-center mb-5">
         <h1 class="fw-bold">Frequently Asked Questions</h1>

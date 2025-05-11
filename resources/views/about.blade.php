@@ -14,7 +14,7 @@
 </section>
 
 <section>
-    <div class="container" style="padding: 60px 0">
+    <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-md-6">
                 <h1 class="fw-bold">Sejarah Kami</h1>
@@ -34,7 +34,7 @@
 </section>
 
 <section style="background-color: #eef2f5">
-    <div style="padding: 60px 0">
+    <div class="py-5">
         {{-- Judul --}}
         <div class="container">
             <div class="row justify-content-end">
@@ -100,7 +100,7 @@
 </section>
 
 <section>
-    <div style="padding: 60px 0">
+    <div class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 text-center mb-2">
@@ -121,7 +121,7 @@
 </section>
 
 <section style="background-color: #eef2f5">
-    <div style="padding: 60px 0">
+    <div class="py-5">
         {{-- CEO Founder --}}
         <div class="container">
             <div class="row align-items-center">
