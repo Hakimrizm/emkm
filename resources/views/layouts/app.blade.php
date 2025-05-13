@@ -16,6 +16,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('/css/guest.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/form-login.css') }}">
     <script src="{{ asset('/js/navbarScroll.js') }}"></script>
 </head>
 <body>
