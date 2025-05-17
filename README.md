@@ -1,4 +1,4 @@
-# E-MKM (KalkuUMKM)
+# E-MKM (UMKM)
 
 **E-MKM (Electronic Mitra Kecil Menengah)** adalah platform web yang dirancang khusus untuk membantu pelaku Usaha Mikro, Kecil, dan Menengah (UMKM) dalam memahami dan mengelola keuangan bisnis mereka dengan mudah.
 
