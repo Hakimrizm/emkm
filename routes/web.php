@@ -4,6 +4,7 @@ use App\Http\Controllers\GuestInterfaceController;
 use App\Http\Controllers\Auth\GoogleController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HppExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,12 @@ Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'inde
 Route::resource('/dashboard/article', App\Http\Controllers\ArticleController::class)->middleware('admin');
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/hpp/export/pdf', [HppExportController::class, 'exportPdf'])->name('hpp.export.pdf');
+    Route::get('/hpp/export/excel', [HppExportController::class, 'exportExcel'])->name('hpp.export.excel');
+
+    Route::get('/hpp/form', function () {
+        return view('hpp.form');
+    });
+});
