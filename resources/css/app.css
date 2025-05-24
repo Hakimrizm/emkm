@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @source "../views";
+
+.hover\:bg-sky-700 {
+  &:hover {
+    background-color: var(--color-sky-700);
+  }
+}

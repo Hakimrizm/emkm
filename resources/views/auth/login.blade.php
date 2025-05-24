@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+@include('components.navbar')
+
 <div class="min-h-screen flex items-center justify-center px-4 bg-gray-50">
     <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
         <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>

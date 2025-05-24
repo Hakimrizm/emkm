@@ -3,7 +3,6 @@
 @section('content')
 @include('components.navbar')
 
-<!-- Hero Section -->
 <section class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-24">
     <div class="container mx-auto text-center">
         <h1 class="text-4xl font-bold mb-6">Edukasi</h1>
