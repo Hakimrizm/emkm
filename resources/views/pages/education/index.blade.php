@@ -3,113 +3,68 @@
 @section('content')
 @include('components.navbar')
 
-<section id="hero-about" class="hero-section">
-    <div class="d-flex justify-content-center align-items-center" style="height: 100%">
-        <div class="text-white text-center">
-            <h1 style="font-size: 3em;" class="fw-bold">Edukasi</h1>
-            <div class="input-group mb-3" style="width: 400px">
-                <input type="text" 
-                        class="form-control bg-transparent text-white border border-secondary rounded-start white-placeholder" 
-                        placeholder="Search" 
-                        aria-label="Search" 
-                        aria-describedby="search" 
-                        style="flex: 2;">
-                <button class="btn btn-outline-secondary" type="button" id="search">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                    </svg>
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-24">
+    <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold mb-6">Edukasi</h1>
+        <div class="flex justify-center">
+            <div class="flex w-full max-w-md bg-white/10 border border-white/30 rounded-lg overflow-hidden">
+                <input type="text" placeholder="Search..." class="w-full bg-transparent text-white px-4 py-2 placeholder-white focus:outline-none">
+                <button class="px-4 bg-white/20 hover:bg-white/30 transition">
+                    <i class="bi bi-search text-white"></i>
                 </button>
             </div>
         </div>
     </div>
 </section>
 
-<div class="container" style="padding: 60px 0">
-    <div class="row">
-        <div class="col-md-8">
-            <div style="width: 100%; height: 400px;" class="overflow-hidden rounded">
-                <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" width="100%">
+<!-- Featured Article -->
+<div class="container mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-3 gap-10">
+        <div class="md:col-span-2">
+            <div class="rounded overflow-hidden shadow">
+                <img src="{{ asset('/images/bg/bg.jpg') }}" alt="Featured" class="w-full h-80 object-cover">
             </div>
-
-            <h4 class="mt-3 fw-semibold">Judul Article Edukasi Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-            <p class="text-muted mb-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam error similique illo, et ullam adipisci dolorum nobis asperiores ipsum eius...</p>
-            <span class="text-muted">7 days ago by Admin</span>
+            <h4 class="mt-5 text-2xl font-semibold">Judul Article Edukasi Lorem ipsum dolor sit amet.</h4>
+            <p class="text-gray-600 mt-2 mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam error similique illo, et ullam...</p>
+            <span class="text-sm text-gray-500">7 days ago by Admin</span>
         </div>
 
-        <div class="col-md-4">
-            <h4 class="fw-semibold">Popular Article</h4>
-
-            <div class="mb-3 d-flex align-items-center" style="flex-basis: 0;">
-                <div class="rounded overflow-hidden" style="width: 150px; flex-shrink: 0;">
-                    <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" style="width: 150px; height: 100px; object-fit: cover;">
-                </div>
-                <div class="ms-2" style="flex: 1;">
-                    <h5 class="fw-semibold m-0">Judul Article Edukasi Lorem ipsum asd jak...</h5>
-                    <span class="text-muted mt-2 d-block">2 Days Ago by Admin</span>
-                </div>
-            </div>
-            <div class="mb-3 d-flex align-items-center" style="flex-basis: 0;">
-                <div class="rounded overflow-hidden" style="width: 150px; flex-shrink: 0;">
-                    <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" style="width: 150px; height: 100px; object-fit: cover;">
-                </div>
-                <div class="ms-2" style="flex: 1;">
-                    <h5 class="fw-semibold m-0">Judul artikel populer</h5>
-                    <span class="text-muted mt-2 d-block">2 Days Ago by Admin</span>
+        <!-- Popular Articles -->
+        <div>
+            <h4 class="text-xl font-semibold mb-4">Artikel Populer</h4>
+            @for ($i = 0; $i < 5; $i++)
+            <div class="flex mb-4">
+                <img src="{{ asset('/images/bg/bg.jpg') }}" class="w-32 h-20 rounded object-cover flex-shrink-0" alt="Popular Article">
+                <div class="ml-4">
+                    <h5 class="font-medium text-sm">Judul artikel populer</h5>
+                    <span class="text-xs text-gray-500">2 days ago by Admin</span>
                 </div>
             </div>
-            <div class="mb-3 d-flex align-items-center" style="flex-basis: 0;">
-                <div class="rounded overflow-hidden" style="width: 150px; flex-shrink: 0;">
-                    <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" style="width: 150px; height: 100px; object-fit: cover;">
-                </div>
-                <div class="ms-2" style="flex: 1;">
-                    <h5 class="fw-semibold m-0">Judul artikel populer</h5>
-                    <span class="text-muted mt-2 d-block">2 Days Ago by Admin</span>
-                </div>
-            </div>
-            <div class="mb-3 d-flex align-items-center" style="flex-basis: 0;">
-                <div class="rounded overflow-hidden" style="width: 150px; flex-shrink: 0;">
-                    <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" style="width: 150px; height: 100px; object-fit: cover;">
-                </div>
-                <div class="ms-2" style="flex: 1;">
-                    <h5 class="fw-semibold m-0">Judul artikel populer</h5>
-                    <span class="text-muted mt-2 d-block">2 Days Ago by Admin</span>
-                </div>
-            </div>
-            <div class="mb-3 d-flex align-items-center" style="flex-basis: 0;">
-                <div class="rounded overflow-hidden" style="width: 150px; flex-shrink: 0;">
-                    <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" style="width: 150px; height: 100px; object-fit: cover;">
-                </div>
-                <div class="ms-2" style="flex: 1;">
-                    <h5 class="fw-semibold m-0">Judul artikel populer</h5>
-                    <span class="text-muted mt-2 d-block">2 Days Ago by Admin</span>
-                </div>
-            </div>
+            @endfor
         </div>
     </div>
 </div>
 
-<section class="container mt-3" style="padding: 60px 0">
-    {{-- Judul --}}
-    <div class="mb-5">
-        <h1 class="fw-bold">Articles Terbaru</h1>
-    </div>
-
-    <div class="row">
+<!-- Latest Articles -->
+<section class="container mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold mb-8">Artikel Terbaru</h1>
+    <div class="grid md:grid-cols-3 gap-8">
         @foreach ($articles as $article)
-            <div class="col-md-4 mb-3">
-                <div class="h-100 d-flex flex-column justify-content-between">
-                    <div class="w-100 overflow-hidden rounded mb-2">
-                        <img src="{{ asset('/images/bg/bg.jpg') }}" alt="" width="100%">
-                    </div>
-                    <h5 class="mb-2">J{{ $article->title }}</h5>
-                    <p class="text-muted">{{ Str::limit(strip_tags($article->content), 100) }}</p>
-                    <a href="" class="btn btn-outline-info w-100">Baca Selengkapnya</a>
-                </div>
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col">
+            <div class="rounded overflow-hidden mb-4">
+                <img src="{{ asset('/images/bg/bg.jpg') }}" class="w-full h-48 object-cover" alt="Article Image">
             </div>
+            <h5 class="text-lg font-semibold mb-2">{{ $article->title }}</h5>
+            <p class="text-sm text-gray-600 flex-grow">{{ Str::limit(strip_tags($article->content), 100) }}</p>
+            <a href="#" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm text-center">Baca Selengkapnya</a>
+        </div>
         @endforeach
     </div>
 
-    {{ $articles->links() }}
+    <div class="mt-8">
+        {{ $articles->links('pagination::tailwind') }}
+    </div>
 </section>
 
 @include('components.footer')

@@ -1,36 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="max-w-5xl mx-auto p-6">
+  <h1 class="text-2xl font-bold mb-4">Form Perhitungan HPP</h1>
 
-@include('components.navbar')
-
-<div class="container py-5">
-  <h1 class="mb-4">Form Perhitungan HPP</h1>
-
-  <div class="mb-3">
-    <label for="jumlahProduksi" class="form-label">Jumlah Unit Produksi:</label>
-    <input type="number" id="jumlahProduksi" value="1" min="1" class="form-control w-auto">
+  <div class="mb-4">
+    <label for="jumlahProduksi" class="block text-sm font-medium mb-1">Jumlah Unit Produksi:</label>
+    <input type="number" id="jumlahProduksi" value="1" min="1" class="border rounded px-3 py-2 w-48">
   </div>
 
   <div id="form-container"></div>
 
-  <div class="mb-4">
-    <h4>Harga Jual</h4>
-    <label for="markup" class="form-label">Markup (%):</label>
-    <input type="number" id="markup" value="30" class="form-control w-auto">
+  <div class="mb-6">
+    <h2 class="text-lg font-semibold mb-2">Harga Jual</h2>
+    <label class="block text-sm font-medium mb-1">Markup (%):</label>
+    <input type="number" id="markup" value="30" class="border rounded px-3 py-2 w-32">
   </div>
 
-  <button onclick="hitungHPP()" class="btn btn-primary mb-4">
+  <button onclick="hitungHPP()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded shadow">
     Hitung HPP & Harga Jual
   </button>
 
-  <div class="border p-3 mb-4 bg-light">
-    <p class="fw-bold">Total HPP: Rp <span id="totalHPP">0</span></p>
-    <p class="fw-bold">HPP Satuan: Rp <span id="hppSatuan">0</span></p>
-    <p class="fw-bold">Harga Jual (dengan markup): Rp <span id="hargaJual">0</span></p>
+  <div class="mt-6 space-y-2 text-lg font-semibold">
+    <p>Total HPP: Rp <span id="totalHPP">0</span></p>
+    <p>HPP Satuan: Rp <span id="hppSatuan">0</span></p>
+    <p>Harga Jual (dengan markup): Rp <span id="hargaJual">0</span></p>
   </div>
 
-  <div id="ringkasan"></div>
+  <div id="ringkasan" class="mt-6"></div>
 </div>
 
 @verbatim
@@ -42,34 +39,26 @@ function buatForm() {
 
   komponen.forEach(nama => {
     const section = document.createElement('div');
-    section.classList.add('mb-4');
+    section.classList.add('mb-6');
     section.innerHTML = `
-      <h4>${nama}</h4>
-      <div id="${nama}-items" class="mb-2"></div>
-      <button type="button" onclick="tambahItem('${nama}')" class="btn btn-outline-secondary btn-sm">+ Tambah Item</button>
+      <h2 class="text-md font-medium mb-2">${nama}</h2>
+      <div id="${nama}-items" class="space-y-2 mb-2"></div>
+      <button type="button" onclick="tambahItem('${nama}')" class="bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded">+ Tambah Item</button>
     `;
     container.appendChild(section);
-    tambahItem(nama); // Tambahkan 1 item default
+    tambahItem(nama);
   });
 }
 
 function tambahItem(komponen) {
   const div = document.getElementById(`${komponen}-items`);
   const row = document.createElement('div');
-  row.classList.add('row', 'g-2', 'mb-2', 'align-items-center', 'item-row');
+  row.classList.add('flex', 'gap-2', 'item-row');
   row.innerHTML = `
-    <div class="col-md-3">
-      <input type="text" class="form-control" placeholder="Nama Item">
-    </div>
-    <div class="col-md-2">
-      <input type="number" class="form-control" placeholder="Qty" min="0">
-    </div>
-    <div class="col-md-3">
-      <input type="number" class="form-control" placeholder="Harga Satuan" min="0">
-    </div>
-    <div class="col-md-2">
-      <button type="button" class="btn btn-danger" onclick="this.closest('.item-row').remove()">Hapus</button>
-    </div>
+    <input type="text" placeholder="Nama Item" class="border px-2 py-1 rounded w-48">
+    <input type="number" placeholder="Qty" min="0" class="border px-2 py-1 rounded w-24">
+    <input type="number" placeholder="Harga Satuan" min="0" class="border px-2 py-1 rounded w-36">
+    <button type="button" onclick="this.parentElement.remove()" class="bg-red-500 text-white px-3 py-1 rounded">Hapus</button>
   `;
   div.appendChild(row);
 }
@@ -84,8 +73,8 @@ function hitungHPP() {
     const rows = div.querySelectorAll('.item-row');
 
     rows.forEach(row => {
-      const qty = parseFloat(row.children[1].children[0].value) || 0;
-      const harga = parseFloat(row.children[2].children[0].value) || 0;
+      const qty = parseFloat(row.children[1].value) || 0;
+      const harga = parseFloat(row.children[2].value) || 0;
       subtotal += qty * harga;
     });
 
@@ -102,12 +91,9 @@ function hitungHPP() {
   document.getElementById('hppSatuan').textContent = hppSatuan.toLocaleString('id-ID');
   document.getElementById('hargaJual').textContent = hargaJual.toLocaleString('id-ID');
 
-  let html = '<h5>Ringkasan Komponen:</h5><ul class="list-group">';
+  let html = '<h2 class="text-md font-medium mb-2">Ringkasan Komponen:</h2><ul class="list-disc pl-5">';
   for (let key in ringkasan) {
-    html += `<li class="list-group-item d-flex justify-content-between">
-               <span>${key}</span>
-               <span>Rp ${ringkasan[key].toLocaleString('id-ID')}</span>
-             </li>`;
+    html += `<li>${key}: Rp ${ringkasan[key].toLocaleString('id-ID')}</li>`;
   }
   html += '</ul>';
   document.getElementById('ringkasan').innerHTML = html;

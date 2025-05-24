@@ -6,33 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - User</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    {{-- Font --}}
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href={{ asset("css/bootstrap.css") }}>
 
-    <link rel="stylesheet" href={{ asset("vendors/iconly/bold.css") }}>
+    {{-- Tailwind --}}
+    @vite('resources/css/app.css')
 
-    <link rel="stylesheet" href={{ asset("vendors/perfect-scrollbar/perfect-scrollbar.css") }}>
-    <link rel="stylesheet" href={{ asset("vendors/bootstrap-icons/bootstrap-icons.css") }}>
-    <link rel="stylesheet" href={{ asset("css/app.css") }}>
-    <link rel="shortcut icon" href={{ asset("images/favicon.svg") }} type="image/x-icon">
+    {{-- Icon (gunakan Heroicons, Tabler, atau CDN dari Bootstrap Icons jika masih dipakai) --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <link rel="shortcut icon" href="{{ asset('images/favicon.svg') }}" type="image/x-icon">
 </head>
 
-<body>
-    <div id="app">
+<body class="font-nunito bg-gray-100 text-gray-900">
+
+    <div id="app" class="flex min-h-screen">
+        {{-- Sidebar --}}
         @include('components.sidebar')
 
-        <div id="main">
+        {{-- Main Content --}}
+        <div id="main" class="flex-1 p-6">
             @yield('content')
         </div>
     </div>
-    <script src={{ asset("vendors/perfect-scrollbar/perfect-scrollbar.min.js") }}></script>
-    <script src={{ asset("js/bootstrap.bundle.min.js") }}></script>
 
-    <script src={{ asset("vendors/apexcharts/apexcharts.js") }}></script>
-    <script src={{ asset("js/pages/dashboard.js") }}></script>
+    {{-- Optional: Alpine.js or other interactivity libraries --}}
+    <script src="//unpkg.com/alpinejs" defer></script>
 
-    <script src={{ asset("js/main.js") }}></script>
+    {{-- Chart Library (opsional, sesuaikan jika pakai ApexCharts atau Chart.js) --}}
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        // Contoh: inisialisasi chart jika ada
+        // const chart = new ApexCharts(...)
+        // chart.render()
+    </script>
 </body>
 
 </html>

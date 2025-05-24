@@ -1,28 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+<div class="min-h-screen flex items-center justify-center px-4 bg-gray-50">
+    <div class="w-full max-w-xl bg-white p-8 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-4 text-center text-gray-800">Verifikasi Email</h2>
 
-                <div class="card-body">
-                    @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
-                    @endif
-
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
-                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
-                        @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
-                    </form>
-                </div>
+        @if (session('resent'))
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
+                {{ __('Link verifikasi baru telah dikirim ke alamat email Anda.') }}
             </div>
-        </div>
+        @endif
+
+        <p class="text-gray-700 mb-4">
+            Sebelum melanjutkan, silakan periksa email Anda untuk tautan verifikasi.
+            Jika Anda tidak menerima email tersebut, Anda dapat meminta tautan baru.
+        </p>
+
+        <form method="POST" action="{{ route('verification.resend') }}" class="text-center">
+            @csrf
+            <button type="submit"
+                class="inline-block bg-blue-600 text-white font-semibold px-6 py-2 rounded-md hover:bg-blue-700 transition">
+                Klik di sini untuk mengirim ulang
+            </button>
+        </form>
     </div>
 </div>
 @endsection

@@ -1,73 +1,71 @@
 @extends('layouts.app')
 
 @section('content')
+@include('components.navbar')
 
-<nav class="navbar" style="background-color: #e3f2fd;" data-bs-theme="light">
-  </nav>
-
-<span class="text-center">
-    <h1 style="font-size: 3em" class="pt-3">halaman article</h1>
-    <p style="animation: alternate">Est.2025</p>
-</span>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-
-            <img src="{{ asset('/images/bg/bg.jpg') }}" width="600px" class="pb-3" alt="background">
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero quae repellendus optio nobis numquam, nesciunt repellat vitae eaque deserunt soluta libero error sunt quam mollitia doloribus voluptatibus sit? Nostrum! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste dolorum quae eligendi ex architecto! Ratione, a maxime. Facilis magni repellat et id saepe quibusdam. Sequi, vel voluptates. Iusto, dicta quisquam?</p>
-        </div>
-    </div>
-</div>
-
-<section class="container py-3" width="300px">
-    <div class="row justify-content-center">
-        <h1 class="text-center">EDUCATION</h1>
-        <div class="col-md-8">
-            <div class="card bg-primary">
-                <div class="card-body">
-                    <p class="pt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa dolores possimus, nostrum eum temporibus repellat eaque saepe suscipit ut! Nemo adipisci voluptatum sunt inventore incidunt nam minus natus! Asperiores, qui. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores excepturi consectetur omnis saepe placeat quia quae dignissimos odio error necessitatibus distinctio iusto temporibus ex, laudantium, nemo accusamus, aliquam iure qui.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card bg-secondary">
-                <div class="card-body text-white">
-                    <h1>Our Information</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam mollitia velit aperiam fugiat, fuga placeat est incidunt dolore repellat atque officiis ducimus, quos accusantium nesciunt eveniet odio rerum aliquam obcaecati? Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nemo dignissimos obcaecati, delectus a sint quis ipsum, sunt nulla perspiciatis rerum iure maiores libero modi beatae laborum repellat, iusto labore.</p>
-                </div>
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-24">
+    <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold mb-6">Edukasi</h1>
+        <div class="flex justify-center">
+            <div class="flex w-full max-w-md bg-white/10 border border-white/30 rounded-lg overflow-hidden">
+                <input type="text" placeholder="Search..." class="w-full bg-transparent text-white px-4 py-2 placeholder-white focus:outline-none">
+                <button class="px-4 bg-white/20 hover:bg-white/30 transition">
+                    <i class="bi bi-search text-white"></i>
+                </button>
             </div>
         </div>
     </div>
 </section>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-        <h2 style="margin-top: auto">HALAMAN KE 2</h2>
-    <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae excepturi consequuntur quasi repudiandae molestiae dolor suscipit dolore ratione, reprehenderit quisquam enim praesentium cum voluptate possimus sint ad recusandae cupiditate alias? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, possimus blanditiis in ullam totam officia, quidem dignissimos autem minima illum cumque, dolores expedita. Voluptate perferendis eveniet sunt, cum quod omnis.</p>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, ex. A recusandae incidunt, ipsa vitae aut quas, natus atque dolorum voluptatem non consectetur praesentium dolore! Eaque nam repudiandae repellat Lorem   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque excepturi quidem veniam sit consequatur laborum labore dolore aut esse, porro, totam, architecto incidunt a harum sint possimus voluptatibus? Sequi.</p>
-    <h3 class="" style="border: 3px solid gray"></h3>
+<!-- Featured Article -->
+<div class="container mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-3 gap-10">
+        <div class="md:col-span-2">
+            <div class="rounded overflow-hidden shadow">
+                <img src="{{ asset('/images/bg/bg.jpg') }}" alt="Featured" class="w-full h-80 object-cover">
+            </div>
+            <h4 class="mt-5 text-2xl font-semibold">Judul Article Edukasi Lorem ipsum dolor sit amet.</h4>
+            <p class="text-gray-600 mt-2 mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam error similique illo, et ullam...</p>
+            <span class="text-sm text-gray-500">7 days ago by Admin</span>
+        </div>
 
-    <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action active" aria-current="true" style="font-size: medium">
-          List item
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">Misalnya tentang Website</a>
-        <a href="#" class="list-group-item list-group-item-action">Misalnya tentang bisnis</a>
-        <a href="#" class="list-group-item list-group-item-action">Misalnya tentang marketing</a>
-        <a href="#" class="list-group-item list-group-item-action disabled" aria-disabled="true">Kayaknya ini penutup</a>
-      </div>
-      <h3 class="" style="border: 3px solid gray"></h3>
-      <img src="{{ ('/images/bg/teamwork.jpg')}}" width="600px" alt="Teamwork Images" class="pb-3">
-      <p style="margin-top: 5px">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, laborum quibusdam beatae nulla ut sapiente dolore aperiam consequatur vitae non iste, facere pariatur nesciunt qui magni eligendi distinctio molestias quaerat?</p>
-      <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-        <label for="floatingTextarea2">Comments</label>
-      </div>
+        <!-- Popular Articles -->
+        <div>
+            <h4 class="text-xl font-semibold mb-4">Artikel Populer</h4>
+            @for ($i = 0; $i < 5; $i++)
+            <div class="flex mb-4">
+                <img src="{{ asset('/images/bg/bg.jpg') }}" class="w-32 h-20 rounded object-cover flex-shrink-0" alt="Popular Article">
+                <div class="ml-4">
+                    <h5 class="font-medium text-sm">Judul artikel populer</h5>
+                    <span class="text-xs text-gray-500">2 days ago by Admin</span>
+                </div>
+            </div>
+            @endfor
+        </div>
+    </div>
 </div>
+
+<!-- Latest Articles -->
+<section class="container mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold mb-8">Artikel Terbaru</h1>
+    <div class="grid md:grid-cols-3 gap-8">
+        @foreach ($articles as $article)
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col">
+            <div class="rounded overflow-hidden mb-4">
+                <img src="{{ asset('/images/bg/bg.jpg') }}" class="w-full h-48 object-cover" alt="Article Image">
+            </div>
+            <h5 class="text-lg font-semibold mb-2">{{ $article->title }}</h5>
+            <p class="text-sm text-gray-600 flex-grow">{{ Str::limit(strip_tags($article->content), 100) }}</p>
+            <a href="#" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm text-center">Baca Selengkapnya</a>
+        </div>
+        @endforeach
+    </div>
+
+    <div class="mt-8">
+        {{ $articles->links('pagination::tailwind') }}
+    </div>
+</section>
+
+@include('components.footer')
 @endsection

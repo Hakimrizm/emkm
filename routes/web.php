@@ -39,5 +39,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/hpp/form', function () {
         return view('hpp.form');
+
     });
 });
