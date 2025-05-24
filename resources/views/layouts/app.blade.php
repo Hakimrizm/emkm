@@ -19,5 +19,11 @@
     @yield('content')
 
     @stack('scripts')
+
+    <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.plugin(window.AlpineCollapse)
+      })
+    </script>
   </body>
 </html>

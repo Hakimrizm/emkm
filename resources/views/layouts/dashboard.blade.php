@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - User</title>
-
-    {{-- Font --}}
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-    {{-- Tailwind --}}
-    @vite('resources/css/app.css')
-
-    {{-- Icon (gunakan Heroicons, Tabler, atau CDN dari Bootstrap Icons jika masih dipakai) --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
-    <link rel="shortcut icon" href="{{ asset('images/favicon.svg') }}" type="image/x-icon">
+  <meta charset="UTF-8">
+  <title>@yield('title', 'Dashboard')</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  @vite(['resources/css/app.css'])
 </head>
+<body class="bg-gray-100 text-gray-900" x-data="{ sidebarOpen: false }">
 
-<body class="font-nunito bg-gray-100 text-gray-900">
+  <!-- Overlay (Mobile) -->
+  <div 
+    class="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+    x-show="sidebarOpen"
+    x-transition.opacity
+    @click="sidebarOpen = false"
+></div>
 
-    <div id="app" class="flex min-h-screen">
-        {{-- Sidebar --}}
-        @include('components.sidebar')
-
-        {{-- Main Content --}}
-        <div id="main" class="flex-1 p-6">
-            @yield('content')
-        </div>
+  <!-- Sidebar -->
+  <aside 
+    class="fixed inset-y-0 left-0 z-50 w-64 bg-blue-900 text-white transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out"
+    :class="{ '-translate-x-full': !sidebarOpen, 'translate-x-0': sidebarOpen }"
+  >
+    <div class="p-4 font-bold text-xl">
+      Dashboard
     </div>
+    <nav class="mt-6">
+      <a href="#" class="block px-4 py-2 hover:bg-blue-700">Beranda</a>
+      <a href="#" class="block px-4 py-2 hover:bg-blue-700">Pengguna</a>
+      <a href="#" class="block px-4 py-2 hover:bg-blue-700">Laporan</a>
+    </nav>
+  </aside>
 
-    {{-- Optional: Alpine.js or other interactivity libraries --}}
-    <script src="//unpkg.com/alpinejs" defer></script>
+  <!-- Main content -->
+  <div class="lg:pl-64 min-h-screen flex flex-col">
 
-    {{-- Chart Library (opsional, sesuaikan jika pakai ApexCharts atau Chart.js) --}}
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script>
-        // Contoh: inisialisasi chart jika ada
-        // const chart = new ApexCharts(...)
-        // chart.render()
-    </script>
+    <!-- Topbar -->
+    <header class="bg-white shadow p-4 flex justify-between items-center">
+      <button @click="sidebarOpen = !sidebarOpen" class="lg:hidden text-blue-900">
+        ☰
+      </button>
+      <h1 class="text-xl font-semibold">@yield('title', 'Dashboard')</h1>
+    </header>
+
+    <!-- Content -->
+    <main class="p-6 flex-1">
+      @yield('content')
+    </main>
+
+  </div>
+
 </body>
-
 </html>

@@ -4,7 +4,7 @@
     :class="scrolled 
         ? 'bg-blue-800/60 backdrop-blur text-white shadow-lg mt-2' 
         : 'bg-white text-gray-900 mt-6'" 
-    class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl rounded-xl z-50 transition-all duration-300 ease-in-out"
+    class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl rounded-xl z-50 transition-all duration-300 ease-in-out shadow-sm"
 >
     <div class="px-6 py-3 flex items-center justify-between">
         <a href="#" class="text-xl font-bold">E-MKM</a>
@@ -45,7 +45,7 @@
                 @endif
             @else
                 <div x-data="{ userMenu: false }" class="relative">
-                    <button @click="userMenu = !userMenu" class="flex items-center gap-2 hover:underline font-medium">
+                    <button @click="userMenu = !userMenu" class="flex items-center gap-2 hover:underline font-medium cursor-pointer">
                         {{ Auth::user()->name }}
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 

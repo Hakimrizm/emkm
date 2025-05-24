@@ -5,7 +5,7 @@
 
 {{-- Hero --}}
 <section id="hero-about" class="bg-blue-700 text-white">
-    <div class="flex justify-center items-center h-64 text-center">
+    <div class="flex justify-center items-center h-64 text-center py-35">
         <div>
             <h1 class="text-4xl font-bold mb-2">Tentang Kami</h1>
             <p class="text-lg">Lebih kenal dengan kami agar kita saling mengenal lebih dalam tentang kami.</p>
