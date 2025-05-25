@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\GoogleController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HppExportController;
+use App\Http\Controllers\IncomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/hpp/export/pdf', [HppExportController::class, 'exportPdf'])->name('hpp.export.pdf');
     Route::get('/hpp/export/excel', [HppExportController::class, 'exportExcel'])->name('hpp.export.excel');
+
+    Route::get('/pemasukan/create', [IncomeController::class, 'create'])->name('income.create');
+    Route::post('/pemasukan', [IncomeController::class, 'store'])->name('income.store');
+    Route::resource('/kategori-pemasukan', \App\Http\Controllers\IncomeCategoryController::class);
+
 });
