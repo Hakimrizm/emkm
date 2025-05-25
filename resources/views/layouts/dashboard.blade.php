@@ -45,6 +45,18 @@
         <main>
           <div class="p-4 mx-auto max-w-(--breakpoint-2xl) md:p-6">
             @yield('content')
+            <div class="mt-8 grid gap-4 md:grid-cols-2">
+  <a href="{{ route('income.create') }}" class="block p-6 bg-white shadow-md rounded-lg hover:bg-blue-50">
+    <h3 class="text-lg font-semibold text-blue-700">➕ Tambah Pemasukan</h3>
+    <p class="text-gray-600 mt-2">Catat pemasukan seperti penjualan, investasi, dan lainnya.</p>
+  </a>
+
+  <a href="{{ route('hpp.form') }}" class="block p-6 bg-white shadow-md rounded-lg hover:bg-green-50">
+    <h3 class="text-lg font-semibold text-green-700">📊 Hitung HPP & Harga Jual</h3>
+    <p class="text-gray-600 mt-2">Akses kalkulasi HPP dan dapatkan harga jual ideal.</p>
+  </a>
+</div>
+
           </div>
         </main>
         <!-- ===== Main Content End ===== -->
