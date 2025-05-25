@@ -45,7 +45,7 @@
                 @endif
             @else
                 <div x-data="{ userMenu: false }" class="relative">
-                    <button @click="userMenu = !userMenu" class="flex items-center gap-2 hover:underline font-medium cursor-pointer">
+                    <button @click="userMenu = !userMenu" class="flex items-center gap-2 hover:underline font-medium ">
                         {{ Auth::user()->name }}
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 

@@ -6,11 +6,7 @@
     
     <title>@yield('title', 'E-MKM')</title>
     
-    @vite('resources/css/app.css')
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <script src="//unpkg.com/alpinejs" defer></script>
-
-
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
   </head>
   <body class="bg-gray-50 text-gray-900 font-sans leading-relaxed">

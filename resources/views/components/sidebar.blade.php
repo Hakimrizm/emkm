@@ -86,7 +86,7 @@
               </svg>
 
               <span
-                class="menu-item-text"
+                class="menu-item-text dark:text-white"
                 :class="sidebarToggle ? 'lg:hidden' : ''"
               >
                 Dashboard
