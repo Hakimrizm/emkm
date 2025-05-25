@@ -1,47 +1,72 @@
 <?php
 
-use App\Http\Controllers\GuestInterfaceController;
-use App\Http\Controllers\Auth\GoogleController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\GuestInterfaceController;
+use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\HppExportController;
 use App\Http\Controllers\IncomeController;
+use App\Http\Controllers\IncomeCategoryController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExpenseController;
+
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Public Routes (Guest)
 |--------------------------------------------------------------------------
 */
-
 Route::get('/', [GuestInterfaceController::class, 'welcome']);
 Route::get('/tentang-kami', [GuestInterfaceController::class, 'about'])->name('about');
 Route::get('/edukasi', [GuestInterfaceController::class, 'education'])->name('education');
-Route::get('/edukasi/detail', function () {
-    return view('pages.education.education');
-})->name('education.detail');
+Route::get('/edukasi/detail', fn() => view('pages.education.education'))->name('education.detail');
 
+/*
+|--------------------------------------------------------------------------
+| Authentication Routes
+|--------------------------------------------------------------------------
+*/
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-
-Route::resource('/dashboard/article', App\Http\Controllers\ArticleController::class)->middleware('admin');
-
+// Google OAuth
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
+/*
+|--------------------------------------------------------------------------
+| Protected Routes (Login Required)
+|--------------------------------------------------------------------------
+*/
 Route::middleware(['auth'])->group(function () {
-    Route::get('/hpp/form', function () {
-        return view('hpp.form');
-    })->name('hpp.form');
 
+    // Dashboard & Home
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Article (Admin Only)
+    Route::resource('/dashboard/article', ArticleController::class)->middleware('admin');
+
+    // HPP Kalkulasi & Ekspor
+    Route::get('/hpp/form', fn() => view('hpp.form'))->name('hpp.form');
     Route::view('/hpp/hasil', 'hpp.hasil')->name('hpp.hasil');
-
     Route::get('/hpp/export/pdf', [HppExportController::class, 'exportPdf'])->name('hpp.export.pdf');
     Route::get('/hpp/export/excel', [HppExportController::class, 'exportExcel'])->name('hpp.export.excel');
 
+    // Pemasukan
     Route::get('/pemasukan/create', [IncomeController::class, 'create'])->name('income.create');
     Route::post('/pemasukan', [IncomeController::class, 'store'])->name('income.store');
-    Route::resource('/kategori-pemasukan', \App\Http\Controllers\IncomeCategoryController::class);
+
+    // Kategori Pemasukan (CRUD)
+    // Kategori Pemasukan (CRUD)
+
+
+    // Pengeluaran
+    Route::get('/pengeluaran/tambah', [ExpenseController::class, 'create'])->name('expense.create');
+    Route::post('/pengeluaran', [ExpenseController::class, 'store'])->name('expense.store');
+
+
+
 
 });
