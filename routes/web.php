@@ -40,38 +40,35 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 | Protected Routes (Login Required)
 |--------------------------------------------------------------------------
 */
-Route::middleware(['auth'])->group(function () {
-
-    // Dashboard & Home
+Route::middleware(['auth'])->group(function() {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    // Article (Admin Only)
-    Route::resource('/dashboard/article', ArticleController::class)->middleware('admin');
+    // Mengganti Rute yang tadinya /hpp/form menjadin /dashboard/hpp/form jadi menambahkan /dashboard di awalan
+    Route::prefix('/dashboard')->group(function() {
+        // /dashboard
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-    // HPP Kalkulasi & Ekspor
-    Route::get('/hpp/form', fn() => view('hpp.form'))->name('hpp.form');
-    Route::view('/hpp/hasil', 'hpp.hasil')->name('hpp.hasil');
-    Route::get('/hpp/export/pdf', [HppExportController::class, 'exportPdf'])->name('hpp.export.pdf');
-    Route::get('/hpp/export/excel', [HppExportController::class, 'exportExcel'])->name('hpp.export.excel');
+        // Article (Admin Only)
+        Route::resource('/article', ArticleController::class)->middleware('admin');
 
-    // Pemasukan
-    Route::get('/pemasukan/create', [IncomeController::class, 'create'])->name('income.create');
-    Route::post('/pemasukan', [IncomeController::class, 'store'])->name('income.store');
+        // HPP Kalkulasi & Ekspor
+        // Mengganti Rute yang tadinya /hpp/form menjadin /dashboard/hpp/form
+        Route::get('/hpp/form', fn() => view('pages.dashboard.hpp.form'))->name('hpp.form');
+        Route::view('/hpp/hasil', 'pages.dashboard.hpp.hasil')->name('hpp.hasil');
+        Route::get('/hpp/export/pdf', [HppExportController::class, 'exportPdf'])->name('hpp.export.pdf');
+        Route::get('/hpp/export/excel', [HppExportController::class, 'exportExcel'])->name('hpp.export.excel');
 
+        // Pemasukan
+        // Mengganti Rute yang tadinya /pemasukan/create menjadin /dashboard/pemasukan/create
+        Route::get('/pemasukan/create', [IncomeController::class, 'create'])->name('income.create');
+        Route::post('/pemasukan', [IncomeController::class, 'store'])->name('income.store');
 
-    Route::get('/pengeluaran/create', [ExpenseController::class, 'create'])->name('expense.create');
-    Route::post('/pengeluaran', [ExpenseController::class, 'store'])->name('expense.store');
+        Route::get('/pengeluaran/create', [ExpenseController::class, 'create'])->name('expense.create');
+        Route::post('/pengeluaran', [ExpenseController::class, 'store'])->name('expense.store');
 
-    // Pengeluaran
-    Route::get('/produk', [ProductController::class, 'index'])->name('produk.index');
-    Route::get('/produk/create', [ProductController::class, 'create'])->name('product.create');
-    Route::post('/produk', [ProductController::class, 'store'])->name('product.store');
-
-
-
-
-
-
-
+        // Pengeluaran
+        Route::get('/produk', [ProductController::class, 'index'])->name('produk.index');
+        Route::get('/produk/create', [ProductController::class, 'create'])->name('product.create');
+        Route::post('/produk', [ProductController::class, 'store'])->name('product.store');
+    });
 });
