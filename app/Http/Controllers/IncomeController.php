@@ -9,7 +9,7 @@ class IncomeController extends Controller
 {
     public function create()
     {
-        return view('income.create');
+        return view('pages.dashboard.income.create');
     }
 
     public function store(Request $request)

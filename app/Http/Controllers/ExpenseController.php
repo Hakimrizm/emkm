@@ -11,7 +11,7 @@ class ExpenseController extends Controller
     public function create()
     {
         $categories = auth()->user()->expenseCategories;
-        return view('expense.create', compact('categories'));
+        return view('pages.dashboard.expense.create', compact('categories'));
     }
 
     public function store(Request $request)

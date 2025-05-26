@@ -1,20 +1,21 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
+
+@section('title', 'Tambah Pengeluaran')
 
 @section('content')
-@include('components.navbar')
-<div class="max-w-xl mx-auto mt-10 bg-white p-6 rounded-2xl shadow-lg dark:bg-gray-800 relative">
-    <a href="{{ route('expense.create') }}">Tambah Pengeluaran</a>
+<div class="card">
+    <h2 class="text-2xl font-semibold mb-4 dark:text-white">Tambah Pengeluaran</h2>
 
         
     {{-- @if(session('success'))
         <div class="mb-4 text-green-600 font-medium">{{ session('success') }}</div> --}}
         
-    <<form action="{{ route('expense.store') }}" method="POST">
+    <form action="{{ route('expense.store') }}" method="POST">
         @csrf
 
         <!-- Kategori -->
-        <div>
-            <label for="kategori" class="block font-medium text-gray-700 dark:text-gray-200">Kategori</label>
+        <div class="mb-3">
+            <label for="kategori" class="form-label">Kategori</label>
                {{-- <select id="kategori" name="kategori" class="w-full border border-gray-300 rounded px-3 py-2">
                     <option value="Kategori Pengeluaran">Kategori Pengeluaran</option>
                     <option value="Pembelian Bahan Baku">Pembelian Bahan Baku</option>
@@ -26,16 +27,16 @@
                     <option value="Lain-lain">Lain-lain</option>
                 </select> --}}
 
-                <select id="kategori" name="kategori" class="w-full border border-gray-300 rounded px-3 py-2">
-                    <option value="">-- Pilih Kategori --</option>
-                    <option value="Kategori Pengeluaran">Kategori Pengeluaran</option>
-                    <option value="Pembelian Bahan Baku">Pembelian Bahan Baku</option>
-                    <option value="Gaji Karyawan">Gaji Karyawan</option>
-                    <option value="Sewa Tempat">Sewa Tempat</option>
-                    <option value="Biaya Operasional">Biaya Operasional</option>
-                    <option value="Pemasaran">Pemasaran</option>
-                    <option value="Transportasi">Transportasi</option>
-                    <option value="Lain-lain">Lain-lain</option>
+                <select id="kategori" name="kategori" class="form-select">
+                    <option class="option-select" value="">-- Pilih Kategori --</option>
+                    <option class="option-select" value="Kategori Pengeluaran">Kategori Pengeluaran</option>
+                    <option class="option-select" value="Pembelian Bahan Baku">Pembelian Bahan Baku</option>
+                    <option class="option-select" value="Gaji Karyawan">Gaji Karyawan</option>
+                    <option class="option-select" value="Sewa Tempat">Sewa Tempat</option>
+                    <option class="option-select" value="Biaya Operasional">Biaya Operasional</option>
+                    <option class="option-select" value="Pemasaran">Pemasaran</option>
+                    <option class="option-select" value="Transportasi">Transportasi</option>
+                    <option class="option-select" value="Lain-lain">Lain-lain</option>
             @foreach($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->nama }}</option>
             @endforeach
@@ -49,10 +50,10 @@
         </div>
 
         <!-- Deskripsi -->
-        <div>
-            <label for="deskripsi" class="block font-medium text-gray-700 dark:text-gray-200">Deskripsi</label>
+        <div class="mb-3">
+            <label for="deskripsi" class="form-label">Deskripsi</label>
             <input type="text" id="deskripsi" name="deskripsi"
-                class="w-full mt-1 p-2 border rounded-lg dark:bg-gray-700 dark:text-white dark:border-gray-600"
+                class="form-control"
                 placeholder="Contoh: Belanja bahan baku" />
             @error('deskripsi')
                 <div class="text-red-600 text-sm">{{ $message }}</div>
@@ -60,10 +61,10 @@
         </div>
 
         <!-- Jumlah -->
-        <div>
-            <label for="jumlah" class="block font-medium text-gray-700 dark:text-gray-200">Jumlah (Rp)</label>
+        <div class="mb-3">
+            <label for="jumlah" class="form-label">Jumlah (Rp)</label>
             <input type="number" id="jumlah" name="jumlah" required
-                class="w-full mt-1 p-2 border rounded-lg dark:bg-gray-700 dark:text-white dark:border-gray-600"
+                class="form-control"
                 placeholder="Contoh: 50000" />
             @error('jumlah')
                 <div class="text-red-600 text-sm">{{ $message }}</div>
@@ -71,10 +72,10 @@
         </div>
 
         <!-- Tanggal -->
-        <div>
-            <label for="tanggal" class="block font-medium text-gray-700 dark:text-gray-200">Tanggal</label>
+        <div class="mb-3">
+            <label for="tanggal" class="form-label">Tanggal</label>
             <input type="date" id="tanggal" name="tanggal" required
-                class="w-full mt-1 p-2 border rounded-lg dark:bg-gray-700 dark:text-white dark:border-gray-600" />
+                class="form-control" />
             @error('tanggal')
                 <div class="text-red-600 text-sm">{{ $message }}</div>
             @enderror
@@ -83,7 +84,7 @@
         <!-- Tombol Submit -->
         <div class="text-right">
             <button type="submit"
-                class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md">
+                class="bg-blue-600 hover:bg-blue-700 button text-white">
                 Simpan
             </button>
         </div>
