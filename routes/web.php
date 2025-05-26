@@ -11,6 +11,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\ProductController;
 
 
 /*
@@ -58,13 +59,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/pemasukan/create', [IncomeController::class, 'create'])->name('income.create');
     Route::post('/pemasukan', [IncomeController::class, 'store'])->name('income.store');
 
-    // Kategori Pemasukan (CRUD)
-    // Kategori Pemasukan (CRUD)
 
+    Route::get('/pengeluaran/create', [ExpenseController::class, 'create'])->name('expense.create');
+    Route::post('/pengeluaran', [ExpenseController::class, 'store'])->name('expense.store');
 
     // Pengeluaran
-    Route::get('/pengeluaran/tambah', [ExpenseController::class, 'create'])->name('expense.create');
-    Route::post('/pengeluaran', [ExpenseController::class, 'store'])->name('expense.store');
+    Route::get('/produk', [ProductController::class, 'index'])->name('produk.index');
+    Route::get('/produk/create', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/produk', [ProductController::class, 'store'])->name('product.store');
+
+
+
 
 
 

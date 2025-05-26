@@ -1,19 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="max-w-xl mx-auto mt-10 bg-white p-6 rounded-2xl shadow-lg dark:bg-gray-800">
-    <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Tambah Pengeluaran</h2>
+@include('components.navbar')
+<div class="max-w-xl mx-auto mt-10 bg-white p-6 rounded-2xl shadow-lg dark:bg-gray-800 relative">
+    <a href="{{ route('expense.create') }}">Tambah Pengeluaran</a>
 
+        
     {{-- @if(session('success'))
         <div class="mb-4 text-green-600 font-medium">{{ session('success') }}</div> --}}
         
-    <form action="{{ route('expense.store') }}" method="POST" class="space-y-5">
+    <<form action="{{ route('expense.store') }}" method="POST">
         @csrf
 
         <!-- Kategori -->
         <div>
             <label for="kategori" class="block font-medium text-gray-700 dark:text-gray-200">Kategori</label>
-               <select id="kategori" name="kategori" class="w-full border border-gray-300 rounded px-3 py-2">
+               {{-- <select id="kategori" name="kategori" class="w-full border border-gray-300 rounded px-3 py-2">
                     <option value="Kategori Pengeluaran">Kategori Pengeluaran</option>
                     <option value="Pembelian Bahan Baku">Pembelian Bahan Baku</option>
                     <option value="Gaji Karyawan">Gaji Karyawan</option>
@@ -22,7 +24,24 @@
                     <option value="Pemasaran">Pemasaran</option>
                     <option value="Transportasi">Transportasi</option>
                     <option value="Lain-lain">Lain-lain</option>
-                </select>
+                </select> --}}
+
+                <select id="kategori" name="kategori" class="w-full border border-gray-300 rounded px-3 py-2">
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="Kategori Pengeluaran">Kategori Pengeluaran</option>
+                    <option value="Pembelian Bahan Baku">Pembelian Bahan Baku</option>
+                    <option value="Gaji Karyawan">Gaji Karyawan</option>
+                    <option value="Sewa Tempat">Sewa Tempat</option>
+                    <option value="Biaya Operasional">Biaya Operasional</option>
+                    <option value="Pemasaran">Pemasaran</option>
+                    <option value="Transportasi">Transportasi</option>
+                    <option value="Lain-lain">Lain-lain</option>
+            @foreach($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->nama }}</option>
+            @endforeach
+
+        </select>
+
 
             @error('kategori')
                 <div class="text-red-600 text-sm">{{ $message }}</div>

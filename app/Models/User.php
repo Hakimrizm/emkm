@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\ExpenseCategory; //
+use App\Models\ProductController;
 
 class User extends Authenticatable
 {
@@ -31,9 +32,14 @@ class User extends Authenticatable
     // di App\Models\User.php
     public function expenseCategories()
     {
-    return $this->hasMany(ExpenseCategory::class);
+        return $this->hasMany(ExpenseCategory::class);
+    
     }
+    // app/Models/User.php
 
-
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
     
 }
