@@ -9,22 +9,15 @@ class ExpenseCategory extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'user_id'];
+    protected $guarded = ['id'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function expenses()
     {
         return $this->hasMany(Expense::class);
     }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-
-    }
-
-    public function expenseCategories()
-    {
-    return $this->hasMany(ExpenseCategory::class);
-    }
-
 }

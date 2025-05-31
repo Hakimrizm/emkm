@@ -9,21 +9,15 @@ class Income extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'user_id',
-        'kategori_id',
-        'deskripsi',
-        'jumlah',
-        'tanggal',
-    ];
+    protected $guarded = ['id'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function kategori()
+    public function incomeCategory()
     {
-        return $this->belongsTo(IncomeCategory::class, 'kategori_id');
+        return $this->belongsTo(IncomeCategory::class);
     }
 }

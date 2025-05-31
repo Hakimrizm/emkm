@@ -16,7 +16,7 @@
       <p class="text-gray-600 mt-2">Tambah data pengeluaran agar arus kas usahamu lebih terkontrol.</p>
     </a>
 
-    <a href="{{ route('produk.index') }}" class="card block">
+    <a href="{{ route('product.index') }}" class="card block">
       <h3 class="text-lg font-semibold text-green-700">📦 Produk Saya</h3>
       <p class="text-gray-600 mt-2">Kelola produk, lihat daftar & tambah produk baru.</p>
     </a>

@@ -4,20 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\HasHashid;
 
-class IncomeCategory extends Model
+class ProductCategory extends Model
 {
     use HasFactory;
+    use HasHashid;
 
     protected $guarded = ['id'];
+    protected $with = ['user', 'products'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function incomes()
+    public function products()
     {
-        return $this->hasMany(Income::class);
+        return $this->hasMany(Product::class);
     }
 }

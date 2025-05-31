@@ -2,11 +2,14 @@
 
 namespace App\Providers;
 
+use App\Models\Product;
+use App\Models\ProductCategory;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use Vinkla\Hashids\Facades\Hashids;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -35,6 +38,18 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+        });
+
+        Route::bind('productCategory', function ($value) {
+            $decoded = Hashids::decode($value);
+            if (empty($decoded)) abort(404);
+            return ProductCategory::findOrFail($decoded[0]);
+        });
+
+        Route::bind('product', function ($value) {
+            $decoded = Hashids::decode($value);
+            if (empty($decoded)) abort(404);
+            return Product::findOrFail($decoded[0]);
         });
     }
 }

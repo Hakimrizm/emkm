@@ -169,12 +169,12 @@
           <li>
             <a
               href="#"
-              @click.prevent="selected = (selected === 'Penjualan_dan_Invoice' ? '':'Penjualan_dan_Invoice')"
+              @click.prevent="selected = (selected === 'product' ? '':'product')"
               class="menu-item group"
-              :class=" (selected === 'Penjualan_dan_Invoice') ? 'menu-item-active' : 'menu-item-inactive'"
+              :class=" (selected === 'product') ? 'menu-item-active' : 'menu-item-inactive'"
             >
               <svg
-                :class="(selected === 'Penjualan_dan_Invoice') ? 'menu-item-icon-active'  :'menu-item-icon-inactive'"
+                :class="(selected === 'product') ? 'menu-item-icon-active'  :'menu-item-icon-inactive'"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -191,12 +191,12 @@
                 class="menu-item-text dark:text-white"
                 :class="sidebarToggle ? 'lg:hidden' : ''"
               >
-                Penjualan dan Invoice
+                Product
               </span>
 
               <svg
                 class="menu-item-arrow"
-                :class="[(selected === 'Penjualan_dan_Invoice') ? 'menu-item-arrow-active' : 'menu-item-arrow-inactive', sidebarToggle ? 'lg:hidden' : '' ]"
+                :class="[(selected === 'product') ? 'menu-item-arrow-active' : 'menu-item-arrow-inactive', sidebarToggle ? 'lg:hidden' : '' ]"
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
@@ -216,68 +216,34 @@
             <!-- Dropdown Menu Start -->
             <div
               class="overflow-hidden transform translate"
-              :class="(selected === 'Penjualan_dan_Invoice') ? 'block' :'hidden'">
+              :class="(selected === 'product') ? 'block' :'hidden'">
               <ul
                 :class="sidebarToggle ? 'lg:hidden' : 'flex'"
                 class="flex flex-col gap-1 mt-2 menu-dropdown pl-9">
                 <li>
                   <a
-                    href="index.html"
+                    href="{{ route('product.index') }}"
                     class="menu-dropdown-item group"
-                    :class="page === 'buat_invoice' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
+                    :class="page === 'daftar_produk' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
-                    Buat Invoice
+                    Daftar Produk
                   </a>
                 </li>
               </ul>
             </div>
             <div
               class="overflow-hidden transform translate"
-              :class="(selected === 'Penjualan_dan_Invoice') ? 'block' :'hidden'">
+              :class="(selected === 'product') ? 'block' :'hidden'">
               <ul
                 :class="sidebarToggle ? 'lg:hidden' : 'flex'"
                 class="flex flex-col gap-1 mt-2 menu-dropdown pl-9">
                 <li>
                   <a
-                    href="index.html"
+                    href="{{ route('productCategory.index') }}"
                     class="menu-dropdown-item group"
-                    :class="page === 'daftar_invoice' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
+                    :class="page === 'kategori_produk' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
-                    Daftar Invoice
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div
-              class="overflow-hidden transform translate"
-              :class="(selected === 'Penjualan_dan_Invoice') ? 'block' :'hidden'">
-              <ul
-                :class="sidebarToggle ? 'lg:hidden' : 'flex'"
-                class="flex flex-col gap-1 mt-2 menu-dropdown pl-9">
-                <li>
-                  <a
-                    href="index.html"
-                    class="menu-dropdown-item group"
-                    :class="page === 'piutang' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
-                  >
-                    Piutang
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div
-              class="overflow-hidden transform translate"
-              :class="(selected === 'Penjualan_dan_Invoice') ? 'block' :'hidden'">
-              <ul
-                :class="sidebarToggle ? 'lg:hidden' : 'flex'"
-                class="flex flex-col gap-1 mt-2 menu-dropdown pl-9">
-                <li>
-                  <a
-                    href="index.html"
-                    class="menu-dropdown-item group"
-                    :class="page === 'pelanggan' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
-                  >
-                    Pelanggan
+                    Kategori Produk
                   </a>
                 </li>
               </ul>

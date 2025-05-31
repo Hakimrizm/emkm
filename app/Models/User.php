@@ -6,8 +6,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\ExpenseCategory; //
+use App\Models\ExpenseCategory;
 use App\Models\ProductController;
+use Nette\Schema\Expect;
 
 class User extends Authenticatable
 {
@@ -25,21 +26,33 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function incomes()
+    {
+        return $this->hasMany(Income::class);
+    }
+
     public function incomeCategories()
     {
         return $this->hasMany(IncomeCategory::class);
     }
-    // di App\Models\User.php
+
+    public function expenses()
+    {
+        return $this->hasMany(Expense::class);
+    }
+
     public function expenseCategories()
     {
         return $this->hasMany(ExpenseCategory::class);
-    
     }
-    // app/Models/User.php
 
     public function products()
     {
         return $this->hasMany(Product::class);
     }
-    
+
+    public function productCategories()
+    {
+        return $this->hasMany(ProductCategory::class);
+    }
 }

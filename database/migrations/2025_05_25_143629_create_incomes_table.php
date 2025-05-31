@@ -9,12 +9,15 @@ return new class extends Migration {
     {
         Schema::create('incomes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('kategori'); // contoh: Penjualan, Investasi
-            $table->text('deskripsi')->nullable();
-            $table->decimal('jumlah', 15, 2);
-            $table->date('tanggal');
+            $table->foreignId('user_id');
+            $table->unsignedBigInteger('income_category_id');
+            $table->text('description')->nullable();
+            $table->decimal('amount', 15, 2);
+            $table->date('date');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('income_category_id')->references('id')->on('income_categories')->onDelete('cascade');
         });
     }
 

@@ -11,8 +11,9 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
-
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,9 +67,15 @@ Route::middleware(['auth'])->group(function() {
         Route::get('/pengeluaran/create', [ExpenseController::class, 'create'])->name('expense.create');
         Route::post('/pengeluaran', [ExpenseController::class, 'store'])->name('expense.store');
 
-        // Pengeluaran
-        Route::get('/produk', [ProductController::class, 'index'])->name('produk.index');
-        Route::get('/produk/create', [ProductController::class, 'create'])->name('product.create');
-        Route::post('/produk', [ProductController::class, 'store'])->name('product.store');
+        // Product & Product Category
+        Route::resource('product/category', ProductCategoryController::class)->parameters([ 'category' => 'productCategory' ])->names([
+            'index' => 'productCategory.index',
+            'create' => 'productCategory.create',
+            'store' => 'productCategory.store',
+            'edit' => 'productCategory.edit',
+            'update' => 'productCategory.update',
+            'destroy' => 'productCategory.destroy',
+        ])->except(['show']);
+        Route::resource('product', ProductController::class);
     });
 });

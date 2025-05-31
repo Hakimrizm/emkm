@@ -7,16 +7,15 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void {
         Schema::create('products', function (Blueprint $table) {
-    $table->id(); // Primary key
-    $table->unsignedBigInteger('user_id'); // Relasi ke tabel users
-    $table->string('nama'); // Nama produk
-    $table->string('kategori')->nullable(); // Kategori produk, bisa null
-    $table->decimal('harga', 15, 2)->nullable(); // Harga produk, bisa null
-    $table->integer('stok')->default(0); // Jumlah stok default 0
-    $table->timestamps(); // created_at dan updated_at
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('name');
+            $table->string('product_category_id')->nullable();
+            $table->decimal('price', 15, 2)->nullable();
+            $table->integer('stock')->default(0);
+            $table->timestamps();
 
-    // Foreign key: relasi ke tabel users
-    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
