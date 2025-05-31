@@ -2,22 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProductCategory;
+use App\Models\ExpenseCategory;
 use Illuminate\Http\Request;
 
-class ProductCategoryController extends Controller
+class ExpenseCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $productCategories = auth()->user()
-            ->productCategories()
-            ->withCount('products')
+        $expenseCategories = auth()->user()
+            ->expenseCategories()
+            ->withCount('expenses')
             ->get();
-        
-        return view('pages.dashboard.product.category.index', compact('productCategories'));
+        return view('pages.dashboard.expense.category.index', compact('expenseCategories'));
     }
 
     /**
@@ -25,7 +24,7 @@ class ProductCategoryController extends Controller
      */
     public function create()
     {
-        return view('pages.dashboard.product.category.create');
+        return view('pages.dashboard.expense.category.create');
     }
 
     /**
@@ -41,38 +40,30 @@ class ProductCategoryController extends Controller
             'name.max'      => 'Nama kategori tidak boleh lebih dari 255 karakter.'
         ]);
 
-        $category = ProductCategory::create([
+        $category = ExpenseCategory::create([
             'name' => $validated['name'],
             'user_id' => auth()->id(),
         ]);
 
-        return redirect()->route('productCategory.index')->with([
+        return redirect()->route('expenseCategory.index')->with([
             'success' => 'Kategori berhasil ditambahkan!',
-            'product_category_id' => $category->id,
+            'expense_category_id' => $category->id,
             'status' => 'Added'
         ]);
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(ProductCategory $productCategory)
-    {
-        // return view('pages.dashboard.product.category.category');
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ProductCategory $productCategory)
+    public function edit(ExpenseCategory $expenseCategory)
     {
-        return view('pages.dashboard.product.category.edit', compact('productCategory'));
+        return view('pages.dashboard.expense.category.edit', compact('expenseCategory'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ProductCategory $productCategory)
+    public function update(Request $request, ExpenseCategory $expenseCategory)
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255'
@@ -82,13 +73,13 @@ class ProductCategoryController extends Controller
             'name.max'      => 'Nama kategori tidak boleh lebih dari 255 karakter.'
         ]);
 
-        $productCategory->update([
+        $expenseCategory->update([
             'name' => $validated['name'],
         ]);
 
-        return redirect()->route('productCategory.index')->with([
+        return redirect()->route('expenseCategory.index')->with([
             'success' => 'Kategori berhasil diubah!',
-            'product_category_id' => $productCategory->id,
+            'expense_category_id' => $expenseCategory->id,
             'status' => 'Added'
         ]);
     }
@@ -96,10 +87,10 @@ class ProductCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ProductCategory $productCategory)
+    public function destroy(ExpenseCategory $expenseCategory)
     {
-        $productCategory->delete();
-        return redirect()->route('productCategory.index')
-            ->with('success', 'Kategori produk berhasil dihapus.');
+        $expenseCategory->delete();
+        return redirect()->route('expenseCategory.index')
+            ->with('success', 'Kategori pengeluaran berhasil dihapus.');
     }
 }

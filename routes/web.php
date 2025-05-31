@@ -10,9 +10,11 @@ use App\Http\Controllers\IncomeCategoryController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExpenseCategoryController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
+use App\Models\ExpenseCategory;
 use App\Models\Product;
 
 /*
@@ -59,13 +61,16 @@ Route::middleware(['auth'])->group(function() {
         Route::get('/hpp/export/pdf', [HppExportController::class, 'exportPdf'])->name('hpp.export.pdf');
         Route::get('/hpp/export/excel', [HppExportController::class, 'exportExcel'])->name('hpp.export.excel');
 
-        // Pemasukan
-        // Mengganti Rute yang tadinya /pemasukan/create menjadin /dashboard/pemasukan/create
-        Route::get('/pemasukan/create', [IncomeController::class, 'create'])->name('income.create');
-        Route::post('/pemasukan', [IncomeController::class, 'store'])->name('income.store');
-
-        Route::get('/pengeluaran/create', [ExpenseController::class, 'create'])->name('expense.create');
-        Route::post('/pengeluaran', [ExpenseController::class, 'store'])->name('expense.store');
+        // Product & Product Category
+        Route::resource('expense/category', ExpenseCategoryController::class)->parameters(['category' => 'expenseCategory'])->names([
+            'index' => 'expenseCategory.index',
+            'create' => 'expenseCategory.create',
+            'store' => 'expenseCategory.store',
+            'edit' => 'expenseCategory.edit',
+            'update' => 'expenseCategory.update',
+            'destroy' => 'expenseCategory.destroy', 
+        ])->except('show');
+        Route::resource('expense', ExpenseController::class);
 
         // Product & Product Category
         Route::resource('product/category', ProductCategoryController::class)->parameters([ 'category' => 'productCategory' ])->names([

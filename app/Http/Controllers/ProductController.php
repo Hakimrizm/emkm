@@ -122,7 +122,7 @@ class ProductController extends Controller
         return redirect()->route('product.index')->with([
             'success', 'Produk berhasil diperbarui.',
             'product_id' => $product->id,
-            'status' => 'Added'
+            'status' => 'Edit'
         ]);
     }
 

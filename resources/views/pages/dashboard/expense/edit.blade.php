@@ -1,38 +1,37 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Tambah Pengeluaran')
+@section('title', 'Edit Pengeluaran Saya')
 
 @section('content')
 <div class="mb-3 flex justify-between items-center">
   <h3 class="text-lg font-semibold text-gray-800 dark:text-white/90">
-    Tambah Pengeluaran
+    Edit Pengeluaran
   </h3>
   <a href="{{ route('expense.index') }}" class="button bg-blue-600 hover:bg-blue-700 text-white">Kembali</a>
 </div>
 
 <div class="card">
-    <form action="{{ route('expense.store') }}" method="POST">
+    <form action="{{ route('expense.update', ['expense' => $expense]) }}" method="POST">
         @csrf
 
+        @method('PUT')
         <div class="mb-3">
-            <label for="expense_category_id" class="form-label">Kategori</label>
-            <select id="expense_category_id" name="expense_category_id" class="form-select">
-                @forelse($expenseCategories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+            <label for="price" class="form-label">Kategori</label>
+            <select name="expense_category_id" id="kategori" class="form-select @error('expense_category_id') form-error @enderror">
+                @forelse ($expenseCategories as $category)
+                    <option value="{{ $category->id }}"
+                        {{ old('expense_category_id', $expense->expense_category_id) == $category->id ? 'selected' : '' }}>
+                        {{ $category->name }}
+                    </option>
                 @empty
-                    <option class="option-select" value="">Silahkan tambah kategori terlebih dahulu.</option>
+                    <option value="">Silahkan tambah kategori terlebih dahulu.</option>
                 @endforelse
             </select>
-            @error('kategori')
-                <div class="text-red-600 text-sm">{{ $message }}</div>
-            @enderror
         </div>
 
         <div class="mb-3">
             <label for="description" class="form-label">Deskripsi</label>
-            <input type="text" id="description" name="description"
-                class="form-control"
-                placeholder="Contoh: Belanja bahan baku" value="{{ old('description') }}"/>
+            <input type="text" id="description" name="description" class="form-control" placeholder="Contoh: Belanja bahan baku" value="{{ $expense->description }}" />
             @error('description')
                 <div class="text-red-600 text-sm">{{ $message }}</div>
             @enderror
@@ -40,9 +39,7 @@
 
         <div class="mb-3">
             <label for="amount" class="form-label">Jumlah (Rp)</label>
-            <input type="number" id="amount" name="amount" required
-                class="form-control"
-                placeholder="Contoh: 50000" value="{{ old('amount') }}"/>
+            <input type="number" id="amount" name="amount" required class="form-control" placeholder="Contoh: 50000" value="{{ $expense->amount }}" />
             @error('amount')
                 <div class="text-red-600 text-sm">{{ $message }}</div>
             @enderror
@@ -51,7 +48,7 @@
         <div class="mb-3">
             <label for="date" class="form-label">Tanggal</label>
             <div class="relative">
-                <input type="date" id="date" name="date" required class="form-date" onclick="this.showPicker()" value="{{ old('date') }}" />
+                <input type="date" id="date" name="date" required class="form-date" onclick="this.showPicker()" value="{{ $expense->date }}" />
                 <span class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-gray-500 dark:text-gray-40">
                     <svg
                         class="fill-current"

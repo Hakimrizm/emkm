@@ -3,10 +3,10 @@
 @section('title', 'Dashboard')
 
 @section('content')
-  <h2 class="text-2xl font-bold mb-4 dark:text-white">Selamat Datang</h2>
+  <h2 class="text-2xl font-bold mb-4 dark:text-white">Selamat Datang {{ auth()->user()->name }}</h2>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    <a href="{{ route('income.create') }}" class="card block">
+    <a href="#" class="card block">
       <h3 class="text-lg font-semibold text-blue-700">➕ Tambah Pemasukan</h3>
       <p class="text-gray-600 mt-2">Catat pemasukan seperti penjualan, investasi, dan lainnya.</p>
     </a>

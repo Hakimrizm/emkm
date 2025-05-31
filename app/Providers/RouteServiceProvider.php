@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Expense;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Cache\RateLimiting\Limit;
@@ -50,6 +51,12 @@ class RouteServiceProvider extends ServiceProvider
             $decoded = Hashids::decode($value);
             if (empty($decoded)) abort(404);
             return Product::findOrFail($decoded[0]);
+        });
+
+        Route::bind('expense', function ($value) {
+            $decoded = Hashids::decode($value);
+            if (empty($decoded)) abort(404);
+            return Expense::findOrFail($decoded[0]);
         });
     }
 }

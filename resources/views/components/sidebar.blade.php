@@ -61,16 +61,15 @@
         </h3>
 
         <ul class="flex flex-col gap-4 mb-6">
-          <!-- Menu Item Dashboard -->
           <li>
             <a
-              href="#"
-              @click.prevent="selected = (selected === 'Dashboard' ? '':'Dashboard')"
+              href="{{ route('dashboard') }}"
+              @click="selected = (selected === 'dashboard' ? '': 'dashboard' )"
               class="menu-item group"
-              :class=" (selected === 'Dashboard') ? 'menu-item-active' : 'menu-item-inactive'"
+              :class=" (selected === 'dashboard') && (page === 'dashboard') ? 'menu-item-active' : 'menu-item-inactive'"
             >
               <svg
-                :class="(selected === 'Dashboard') ? 'menu-item-icon-active'  :'menu-item-icon-inactive'"
+                :class="(selected === 'dashboard') ? 'menu-item-icon-active'  :'menu-item-icon-inactive'"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -84,84 +83,12 @@
               </svg>
 
               <span
-                class="menu-item-text dark:text-white"
+                class="menu-item-text"
                 :class="sidebarToggle ? 'lg:hidden' : ''"
               >
                 Dashboard
               </span>
-
-              <svg
-                class="menu-item-arrow"
-                :class="[(selected === 'Dashboard') ? 'menu-item-arrow-active' : 'menu-item-arrow-inactive', sidebarToggle ? 'lg:hidden' : '' ]"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4.79175 7.39584L10.0001 12.6042L15.2084 7.39585"
-                  stroke=""
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
             </a>
-
-            <!-- Dropdown Menu Start -->
-            <div
-              class="overflow-hidden transform translate"
-              :class="(selected === 'Dashboard') ? 'block' :'hidden'">
-              <ul
-                :class="sidebarToggle ? 'lg:hidden' : 'flex'"
-                class="flex flex-col gap-1 mt-2 menu-dropdown pl-9">
-                <li>
-                  <a
-                    href="index.html"
-                    class="menu-dropdown-item group"
-                    :class="page === 'ringkasan_keuangan' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
-                  >
-                    Ringkasan Keungan
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div
-              class="overflow-hidden transform translate"
-              :class="(selected === 'Dashboard') ? 'block' :'hidden'">
-              <ul
-                :class="sidebarToggle ? 'lg:hidden' : 'flex'"
-                class="flex flex-col gap-1 mt-2 menu-dropdown pl-9">
-                <li>
-                  <a
-                    href="index.html"
-                    class="menu-dropdown-item group"
-                    :class="page === 'grafik_arus_kas' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
-                  >
-                    Grafik Arus Kas
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div
-              class="overflow-hidden transform translate"
-              :class="(selected === 'Dashboard') ? 'block' :'hidden'">
-              <ul
-                :class="sidebarToggle ? 'lg:hidden' : 'flex'"
-                class="flex flex-col gap-1 mt-2 menu-dropdown pl-9">
-                <li>
-                  <a
-                    href="index.html"
-                    class="menu-dropdown-item group"
-                    :class="page === 'reminder_mendatang' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
-                  >
-                    Reminder Mendatang
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <!-- Dropdown Menu End -->
           </li>
           <!-- Menu Item Dashboard -->
 
@@ -309,7 +236,7 @@
                 class="flex flex-col gap-1 mt-2 menu-dropdown pl-9">
                 <li>
                   <a
-                    href="index.html"
+                    href="{{ route('expense.create') }}"
                     class="menu-dropdown-item group"
                     :class="page === 'catat-pengeluaran' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -326,7 +253,7 @@
                 class="flex flex-col gap-1 mt-2 menu-dropdown pl-9">
                 <li>
                   <a
-                    href="index.html"
+                    href="{{ route('expense.index') }}"
                     class="menu-dropdown-item group"
                     :class="page === 'daftar-pengeluaran' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
@@ -347,7 +274,7 @@
                     class="menu-dropdown-item group"
                     :class="page === 'hutang' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
-                    Hutang
+                    Hutang (belum)
                   </a>
                 </li>
               </ul>
@@ -364,7 +291,7 @@
                     class="menu-dropdown-item group"
                     :class="page === 'vendor' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                   >
-                    Vendor (Supplier)
+                    Vendor (Supplier) (Belum)
                   </a>
                 </li>
               </ul>
@@ -632,13 +559,13 @@
       class="mx-auto mb-10 w-full max-w-60 rounded-2xl bg-gray-50 px-4 py-5 text-center dark:bg-white/[0.03] bg-gray-200"
     >
       <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">
-        EMKM (Elektronik)
+        EMKM (Elektronik Mitra Kecil Menengah)
       </h3>
       <p class="mb-4 text-gray-500 text-theme-sm dark:text-gray-400">
         Unlock semua fitur dan jadikan bisnis mu melesat.
       </p>
       <a
-        href="https://tailadmin.com/pricing"
+        href="{{ route('dashboard') }}"
         target="_blank"
         rel="nofollow"
         class="flex items-center justify-center p-3 font-medium text-white rounded-lg bg-brand-500 text-theme-sm hover:bg-brand-600"
