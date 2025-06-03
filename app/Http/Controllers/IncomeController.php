@@ -2,33 +2,65 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Income;
+use Illuminate\Http\Request;
 
 class IncomeController extends Controller
 {
-    public function create()
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        return view('pages.dashboard.income.create');
+        //
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $incomeCategories = auth()->user()->incomeCategories;
+        return view('pages.dashboard.income.create', compact('incomeCategories'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(Request $request)
     {
-        $request->validate([
-            'kategori' => 'required|string|max:255',
-            'deskripsi' => 'nullable|string',
-            'jumlah' => 'required|numeric|min:0',
-            'tanggal' => 'required|date',
-        ]);
+        //
+    }
 
-        Income::create([
-            'user_id' => auth()->id(),
-            'kategori' => $request->kategori,
-            'deskripsi' => $request->deskripsi,
-            'jumlah' => $request->jumlah,
-            'tanggal' => $request->tanggal,
-        ]);
+    /**
+     * Display the specified resource.
+     */
+    public function show(Income $income)
+    {
+        //
+    }
 
-        return redirect()->route('dashboard')->with('success', 'Pemasukan berhasil ditambahkan!');
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Income $income)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Income $income)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Income $income)
+    {
+        //
     }
 }

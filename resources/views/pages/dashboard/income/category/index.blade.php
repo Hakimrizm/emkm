@@ -1,13 +1,13 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Pengeluaran Saya')
+@section('title', 'Pemasukan Saya')
 
 @section('content')
 <div class="mb-3 flex justify-between items-center">
   <h3 class="text-lg font-semibold text-gray-800 dark:text-white/90">
-    Pengeluaran Saya
+    Pemasukan Kategori
   </h3>
-  <a href="{{ route('expense.create') }}" class="button bg-blue-600 hover:bg-blue-700 text-white">Tambah Pengeluaran</a>
+  <a href="{{ route('incomeCategory.create') }}" class="button bg-blue-600 hover:bg-blue-700 text-white">Tambah</a>
 </div>
 
 <div class="card">
@@ -21,7 +21,7 @@
               <p
                 class="font-medium text-gray-500 text-theme-xs dark:text-gray-400"
               >
-                Kategori
+                Nama Kategori
               </p>
             </div>
           </th>
@@ -30,28 +30,10 @@
               <p
                 class="font-medium text-gray-500 text-theme-xs dark:text-gray-400"
               >
-                Deskripsi
+                Total Pemasukan
               </p>
             </div>
-          </th>
-          <th class="py-3">
-            <div class="flex items-center">
-              <p
-                class="font-medium text-gray-500 text-theme-xs dark:text-gray-400"
-              >
-                Jumlah
-              </p>
-            </div>
-          </th>
-          <th class="py-3">
-            <div class="flex items-center">
-              <p
-                class="font-medium text-gray-500 text-theme-xs dark:text-gray-400"
-              >
-                Tanggal
-              </p>
-            </div>
-          </th>
+          </th class="py-3">
           <th class="py-3 whitespace-nowrap w-1">
             <div class="flex items-center">
               <p
@@ -66,40 +48,32 @@
       <!-- table header end -->
   
       <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
-        @forelse ($expenses as $expense)
+        @forelse ($incomeCategories as $category)
           <tr>
             <td class="py-3">
               <div class="flex items-center">
-                <p class="text-gray-500 text-theme-sm dark:text-gray-400">
-                  {{ $expense->expenseCategory->name }}
-                </p>
+                <div class="flex items-center gap-3">
+                  <div>
+                    <p
+                      class="font-medium text-gray-800 text-theme-sm dark:text-white/90"
+                    >
+                      {{ $category->name }}
+                    </p>
+                  </div>
+                </div>
               </div>
             </td>
             <td class="py-3">
               <div class="flex items-center">
                 <p class="text-gray-500 text-theme-sm dark:text-gray-400">
-                  {{ $expense->description }}
-                </p>
-              </div>
-            </td>
-            <td class="py-3">
-              <div class="flex items-center">
-                <p class="text-gray-500 text-theme-sm dark:text-gray-400">
-                  Rp{{ number_format($expense->amount, 0, ',', '.') }}
-                </p>
-              </div>
-            </td>
-            <td class="py-3">
-              <div class="flex items-center">
-                <p class="text-gray-500 text-theme-sm dark:text-gray-400">
-                  {{ $expense->date }}
+                  {{ $category->incomes_count }} Pemasukan
                 </p>
               </div>
             </td>
             <td class="py-3">
               <div class="flex items-center gap-2">
-                <a href="{{ route('expense.edit', ['expense' => $expense]) }}" class="button button-sm bg-blue-600 hover:bg-blue-700 text-white">Edit</a>
-                <form action="{{ route('expense.destroy', ['expense' => $expense]) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus?')">
+                <a href="{{ route('incomeCategory.edit', ['incomeCategory' => $category]) }}" class="button button-sm bg-blue-600 hover:bg-blue-700 text-white">Edit</a>
+                <form action="{{ route('incomeCategory.destroy', ['incomeCategory' => $category]) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus?')">
                   @csrf
                   @method('DELETE')
 
@@ -111,7 +85,7 @@
         @empty
           <tr>
             <td>
-              <span class="dark:text-white">Belum ada pengeluaran</span>
+              <span class="dark:text-white">Pemasukan kategori belum anda tambahkan. Silahkan tambahkan</span> 
             </td>
           </tr>
         @endforelse
@@ -119,5 +93,4 @@
     </table>
   </div>
 </div>
-
 @endsection

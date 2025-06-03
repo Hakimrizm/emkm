@@ -13,8 +13,11 @@ class IncomeCategoryController extends Controller
      */
     public function index()
     {
-        $categories = Auth::user()->incomeCategories;
-        return view('income_category.index', compact('categories'));
+        $incomeCategories = auth()->user()
+            ->incomeCategories()
+            ->withCount('incomes')
+            ->get();
+        return view('pages.dashboard.income.category.index', compact('incomeCategories'));
     }
 
     /**
@@ -22,7 +25,7 @@ class IncomeCategoryController extends Controller
      */
     public function create()
     {
-        return view('income_category.create');
+        return view('pages.dashboard.income.category.create');
     }
 
     /**
@@ -30,61 +33,60 @@ class IncomeCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-        ]);
+        try {
+            $request->validate([
+                'name' => 'required|string|max:255',
+            ]);
 
-        $categories = Auth::user()->incomeCategories;
-        return redirect()->route('kategori-pemasukan.index')->with('success', 'Kategori berhasil ditambahkan.');
+            IncomeCategory::create([
+                'name' => $request->name,
+                'user_id' => auth()->user()->id
+            ]);
+            
+            return redirect()->route('incomeCategory.index')->with('success', 'Kategori berhasil ditambahkan.');
+        } catch (\Throwable $th) {
+            return redirect()->route('incomeCategory.create')->with('fail', 'Kategori gagal ditambahkan.');
+        }
     }
 
     /**
      * Tampilkan form edit kategori pemasukan.
      */
-    public function edit(IncomeCategory $kategori_pemasukan)
+    public function edit(IncomeCategory $incomeCategory)
     {
-        // Pastikan hanya pemilik kategori yang dapat mengedit
-        $this->authorizeCategory($kategori_pemasukan);
-
-        return view('income_category.edit', ['category' => $kategori_pemasukan]);
+        return view('pages.dashboard.income.category.edit', ['category' => $incomeCategory]);
     }
 
     /**
      * Update kategori pemasukan di database.
      */
-    public function update(Request $request, IncomeCategory $kategori_pemasukan)
+    public function update(Request $request, IncomeCategory $incomeCategory)
     {
-        $this->authorizeCategory($kategori_pemasukan);
-
-        $request->validate([
-            'name' => 'required|string|max:255',
-        ]);
-
-        $kategori_pemasukan->update([
-            'name' => $request->name,
-        ]);
-
-        return redirect()->route('kategori-pemasukan.index')->with('success', 'Kategori berhasil diperbarui.');
+        try {
+            $request->validate([
+                'name' => 'required|string|max:255',
+            ]);
+    
+            $incomeCategory->update([
+                'name' => $request->name,
+            ]);
+    
+            return redirect()->route('incomeCategory.index')->with('success', 'Kategori berhasil diperbarui.');
+        } catch (\Throwable $th) {
+            return redirect()->route('incomeCategory.edit')->with('fail', 'Kategori gagal diperbarui. Silahkan coba kembali.');
+        }
     }
 
     /**
      * Hapus kategori pemasukan dari database.
      */
-    public function destroy(IncomeCategory $kategori_pemasukan)
+    public function destroy(IncomeCategory $incomeCategory)
     {
-        $this->authorizeCategory($kategori_pemasukan);
-
-        $kategori_pemasukan->delete();
-        return redirect()->route('kategori-pemasukan.index')->with('success', 'Kategori dihapus.');
-    }
-
-    /**
-     * Cek apakah user yang login adalah pemilik kategori.
-     */
-    private function authorizeCategory(IncomeCategory $category)
-    {
-        if ($category->user_id !== Auth::id()) {
-            abort(403, 'Tidak diizinkan mengakses data ini.');
+        try {
+            $incomeCategory->delete();
+            return redirect()->route('incomeCategory.index')->with('success', 'Kategori dihapus.');
+        }catch(\Throwable $th) {
+            return redirect()->route('incomeCategory.index')->with('fail', 'Kategori gagal dihapus. Silahkan coba kembali.');
         }
     }
 }

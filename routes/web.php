@@ -61,14 +61,25 @@ Route::middleware(['auth'])->group(function() {
         Route::get('/hpp/export/pdf', [HppExportController::class, 'exportPdf'])->name('hpp.export.pdf');
         Route::get('/hpp/export/excel', [HppExportController::class, 'exportExcel'])->name('hpp.export.excel');
 
-        // Product & Product Category
+        // Income & Income Category
+        Route::resource('income/category', IncomeCategoryController::class)->parameters(['category' => 'incomeCategory'])->names([
+            'index' => 'incomeCategory.index',
+            'create' => 'incomeCategory.create',
+            'store' => 'incomeCategory.store',
+            'edit' => 'incomeCategory.edit',
+            'update' => 'incomeCategory.update',
+            'destroy' => 'incomeCategory.destroy',
+        ]);
+        Route::resource('income', IncomeController::class);
+
+        // Expense & Expense Category
         Route::resource('expense/category', ExpenseCategoryController::class)->parameters(['category' => 'expenseCategory'])->names([
             'index' => 'expenseCategory.index',
             'create' => 'expenseCategory.create',
             'store' => 'expenseCategory.store',
             'edit' => 'expenseCategory.edit',
             'update' => 'expenseCategory.update',
-            'destroy' => 'expenseCategory.destroy', 
+            'destroy' => 'expenseCategory.destroy',
         ])->except('show');
         Route::resource('expense', ExpenseController::class);
 

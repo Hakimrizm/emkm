@@ -1,18 +1,17 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Pengeluaran Tambah Kategori')
+@section('title', 'Pemasukan Saya')
 
 @section('content')
-
 <div class="mb-3 flex justify-between items-center">
   <h3 class="text-lg font-semibold text-gray-800 dark:text-white/90">
-    Pengeluaran Kategori
+    Tambah Pemasukan Kategori
   </h3>
-  <a href="{{ route('expenseCategory.index') }}" class="button bg-blue-600 hover:bg-blue-700 text-white">Kembali</a>
+  <a href="{{ route('incomeCategory.index') }}" class="button bg-blue-600 hover:bg-blue-700 text-white">Kembali</a>
 </div>
 
 <div class="card max-w-md">
-  <form action="{{ route('expenseCategory.store') }}" method="POST">
+  <form action="{{ route('incomeCategory.store') }}" method="POST">
     @csrf
     <div class="mb-3">
       <label for="name" class="form-label">Masukan Nama Kategori</label>
