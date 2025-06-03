@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Expense;
 use App\Models\ExpenseCategory;
+use App\Models\Income;
 use App\Models\IncomeCategory;
 use App\Models\Product;
 use App\Models\ProductCategory;
@@ -65,6 +66,12 @@ class RouteServiceProvider extends ServiceProvider
             $decoded = Hashids::decode($value);
             if (empty($decoded)) abort(404);
             return ExpenseCategory::findOrFail($decoded[0]);
+        });
+
+        Route::bind('income', function ($value) {
+            $decoded = Hashids::decode($value);
+            if (empty($decoded)) abort(404);
+            return Income::findOrFail($decoded[0]);
         });
 
         Route::bind('incomeCategory', function ($value) {

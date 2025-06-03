@@ -5,7 +5,7 @@
 @section('content')
 <div class="mb-3 flex justify-between items-center">
   <h3 class="text-lg font-semibold text-gray-800 dark:text-white/90">
-    Tambah Produk
+    Tambah Pemasukan
   </h3>
   <a href="{{ route('income.index') }}" class="button bg-blue-600 hover:bg-blue-700 text-white">Kembali</a>
 </div>
@@ -16,15 +16,15 @@
 
         {{-- Dropdown Kategori --}}
         <div class="mb-3">
-            <label for="expense_category_id" class="form-label">Kategori</label>
-            <select id="expense_category_id" name="expense_category_id" class="form-select">
+            <label for="income_category_id" class="form-label">Kategori</label>
+            <select id="income_category_id" name="income_category_id" class="form-select">
                 @forelse($incomeCategories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @empty
                     <option class="option-select" value="">Silahkan tambah kategori terlebih dahulu.</option>
                 @endforelse
             </select>
-            @error('kategori')
+            @error('income_category_id')
                 <div class="text-red-600 text-sm">{{ $message }}</div>
             @enderror
         </div>
