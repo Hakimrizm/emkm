@@ -8,14 +8,12 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('product_category_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->string('product_category_id')->nullable();
             $table->decimal('price', 15, 2)->nullable();
             $table->integer('stock')->default(0);
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
