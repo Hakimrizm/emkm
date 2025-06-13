@@ -243,12 +243,15 @@
                 class="flex flex-col gap-1 mt-2 menu-dropdown pl-9">
                 <li>
                   <a
-                    href="index.html"
+                    href="{{ route('hutang.create') }}"
                     class="menu-dropdown-item group"
-                    :class="page === 'hutang' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
-                  >
+                    :class="page === 'Transaksi' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
+                   >
                     Hutang
                   </a>
+                    
+                    {{-- <a href="{{ route('hutang.create') }}">Tambah Hutang</a> --}}
+
                 </li>
               </ul>
             </div>
@@ -290,7 +293,7 @@
                 class="menu-item-text dark:text-white"
                 :class="sidebarToggle ? 'lg:hidden' : ''"
               >
-                laporan Keuangan
+                Laporan Keuangan
               </span>
 
               <svg
@@ -389,9 +392,9 @@
           <li>
             <a
               href="calendar.html"
-              @click="selected = (selected === 'hitung-hpp' ? '': 'hitung-hpp' )"
+              @click="selected = (selected === 'kalkulasi-harga' ? '': 'kalkulasi-harga' )"
               class="menu-item group"
-              :class=" (selected === 'hitung-hpp') && (page === 'hitung-hpp') ? 'menu-item-active' : 'menu-item-inactive'"
+              :class=" (selected === 'kalkulasi-harga') && (page === 'kalkulasi-harga') ? 'menu-item-active' : 'menu-item-inactive'"
             >
               <i class="bi bi-calculator-fill"
                 :class="(selected === 'dashboard') ? 'menu-item-icon-active' : 'menu-item-icon-inactive'" 
@@ -402,7 +405,7 @@
                 class="menu-item-text"
                 :class="sidebarToggle ? 'lg:hidden' : ''"
               >
-                Hitung-hpp
+                Kalkulasi Harga
               </span>
             </a>
           </li>

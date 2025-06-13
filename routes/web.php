@@ -14,6 +14,7 @@ use App\Http\Controllers\ExpenseCategoryController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HutangController;
 use App\Models\ExpenseCategory;
 use App\Models\Product;
 
@@ -93,5 +94,11 @@ Route::middleware(['auth'])->group(function() {
             'destroy' => 'productCategory.destroy',
         ])->except(['show']);
         Route::resource('product', ProductController::class);
+
+        //kategori hutang (thania)
+        Route::resource('hutang', HutangController::class);
+        Route::get('hutang/cetak', [HutangController::class, 'cetak'])->name('hutang.cetak');
+        Route::get('hutang/kirim-email', [HutangController::class, 'kirimEmail'])->name('hutang.kirimEmail');
+
     });
 });

@@ -7,8 +7,15 @@
     class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl rounded-xl z-50 transition-all duration-300 ease-in-out shadow-sm"
 >
     <div class="px-6 py-3 flex items-center justify-between">
-        <a href="#" class="text-xl font-bold">E-MKM</a>
-
+        {{-- <a href="#" class="text-xl font-bold">E-MKM</a> --}}
+        <a href="index.html">
+      <span class="logo" :class="sidebarToggle ? 'hidden' : ''">
+        <img class="dark:hidden" src="{{ asset('images/logo/logo.svg') }}" alt="Logo" />
+        <img
+          class="hidden dark:block"
+          src="{{ asset('images/logo/logo.svg') }}"
+          alt="Logo"
+        />
         <button @click="open = !open" class="md:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -30,7 +37,6 @@
                 </button>
                 <div x-show="open" @click.away="open = false"
                      class="absolute bg-white text-gray-800 mt-2 w-48 rounded shadow-lg py-2 z-50">
-                    <a href="/hpp/form" class="block px-4 py-2 hover:bg-gray-100">Hitung HPP</a>
                 </div>
             </div>
         </div>
