@@ -36,7 +36,7 @@
     </div>
     <div class="grid md:grid-cols-3 gap-8 container mx-auto px-6">
         @foreach([
-            ['icon' => 'bi-pencil-fill', 'title' => 'Catat Transaksi Mudah', 'desc' => 'Tambah pemasukan dan pengeluaran harian bisnismu dengan mudah.'],
+            ['icon' => 'bi-pencil-fill', 'title' => 'Catat Transaksi Mudah', 'desc' => 'Tambah pemasukan dan pengeluaran harian bisnismu dengan efektif dan efisien.'],
             ['icon' => 'bi-bar-chart-steps', 'title' => 'Lihat Laporan Otomatis', 'desc' => 'Pantau performa usahamu dengan laporan keuangan mingguan dan bulanan.'],
             ['icon' => 'bi-lightbulb-fill', 'title' => 'Belajar Manajemen Keuangan', 'desc' => 'Dapatkan edukasi praktis untuk mengelola keuangan lebih baik.']
         ] as $fitur)
@@ -60,7 +60,7 @@
     <div class="grid md:grid-cols-2 gap-10 container mx-auto px-6">
         <div class="bg-white p-8 rounded-lg shadow">
             <h3 class="text-2xl font-bold mb-4">Visi</h3>
-            <p class="text-gray-700">Mewujudkan UMKM Indonesia yang melek digital dan cerdas dalam mengelola keuangan usaha.</p>
+            <p class="text-gray-700">Mewujudkan UMKM Indonesia untuk beradaptasi dengan era digital dan cerdas dalam mengelola keuangan usaha.</p>
         </div>
         <div class="bg-white p-8 rounded-lg shadow">
             <h3 class="text-2xl font-bold mb-4">Misi</h3>

@@ -53,7 +53,7 @@
         </div>
 
         <div class="bg-gray-800 text-center text-white text-sm py-4">
-            &copy; {{ date('Y') }} E-MKM. All rights reserved.
+            &copy; {{ date('Y') }} 2025 E-MKM. All rights reserved.
         </div>
     </div>
 </footer>

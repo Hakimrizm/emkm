@@ -15,17 +15,29 @@
 
 {{-- Sejarah --}}
 <section class="py-16">
-    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"> 
         <div>
             <h1 class="text-3xl font-bold mb-4">
                 Sejarah Kami
             </h1>
-            <p class="text-gray-700 text-lg mb-4"> 
-                Kami tahu betul bahwa pemerintah selalu mengadakan pendanaan untuk mahasiswa yang ingin berkembang dan mempunyai ide bisnis. Dari titik ini, kami ingin membuat sebuh website yang membantu perekonomian Indonesia. E-MKM terbentuk dari inspirasi program studi yang ada di Institut Digital Ekonomi Indonesia yaitu; Teknik Informatika. Sistem Informasi, Administrasi Bisnis, dan Akuntansi. E-MKM mempunyai 2 target utaa, yaiut membantu UMKM di Indonesia dan mengurangkan angka pengangguran bagi <span class="italic"> fresh graduate</span>.
-            </p>
-            <div id="extra-history" class="text-gray-600 hidden">
-                Konten tambahan sejarah yang muncul saat klik baca selengkapnya.
-            </div>
+            <div class="text-gray-700 text-lg mb-4 text-justify max-w-4xl mx-auto">
+                <p class="mb-4">
+                Kami menyadari bahwa pemerintah secara konsisten menyediakan berbagai bentuk pendanaan dan dukungan bagi mahasiswa yang memiliki semangat berinovasi dan ide bisnis yang visioner. Berangkat dari peluang tersebut, kami menghadirkan E-MKM, sebuah platform digital yang dirancang untuk turut serta membangun perekonomian Indonesia melalui pemberdayaan pelaku Usaha Mikro, Kecil, dan Menengah (UMKM).
+                </p>
+
+                <p class="mb-4">
+                E-MKM lahir dari kolaborasi ide dan semangat lintas disiplin ilmu di Institut Digital Ekonomi Indonesia, khususnya dari Program Studi Teknik Informatika, Sistem Informasi, Administrasi Bisnis, dan Akuntansi. Platform ini tidak hanya mencerminkan semangat kewirausahaan generasi muda, tetapi juga mengintegrasikan keilmuan dan teknologi dalam mendukung transformasi digital UMKM.
+                </p>
+
+                <p class="mb-4">
+
+                E-MKM mempunyai dua target utama, yaitu memberdayakan UMKM Indonesia dan mengurangkan tingkat pengangguran yang ada di Indonesia.
+                </p>
+
+                <p class="mb-4">
+                Melalui E-MKM, kami berkomitmen menjadi mitra strategis dalam mewujudkan UMKM yang tangguh, adaptif, dan berdaya saing di era digital.
+                </p>
+        </div>
         </div>
         <div>
             <img src="{{ asset('/images/bg/teamwork.jpg') }}" alt="Teamwork" class="w-full rounded shadow">
@@ -37,8 +49,7 @@
 <section class="bg-gray-100 py-16">
     <div class="container mx-auto px-6">
         <div class="text-right mb-10">
-            <h1 class="text-3xl font-bold">Visi, Misi dan Values</h1>
-            <p class="text-gray-600 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, totam?</p>
+            <h1 class="text-3xl font-bold">Visi dan Misi</h1>
         </div>
         <div class="grid md:grid-cols-3 gap-8">
             {{-- Mission --}}
@@ -46,12 +57,11 @@
                 <div class="mb-4">
                     <svg class="w-14 h-14 text-blue-600" fill="currentColor" viewBox="0 0 16 16">...</svg>
                 </div>
-                <h4 class="text-xl font-semibold mb-2">Mission Statement</h4>
-                <p class="text-gray-600 mb-2">Lorem ipsum dolor sit amet...</p>
+                <h4 class="text-xl font-semibold mb-2">Misi Kami</h4>
                 <ul class="list-disc list-inside text-gray-600">
-                    <li>Misi 1</li>
-                    <li>Misi 2</li>
-                    <li>Misi 3</li>
+                    <li>Memberdayakan UMKM</li>
+                    <li>Mendorong pertumbuhan ekonomi nasional</li>
+                    <li>Mengurangi angka pengangguran</li>
                 </ul>
             </div>
 
@@ -60,22 +70,11 @@
                 <div class="mb-4">
                     <svg class="w-14 h-14 text-green-600" fill="currentColor" viewBox="0 0 16 16">...</svg>
                 </div>
-                <h4 class="text-xl font-semibold mb-2">Vision Statement</h4>
-                <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                <h4 class="text-xl font-semibold mb-2">Visi Kami</h4>
+                <p class="text-gray-600">Menjadi platform digital nomor 1 di di Indonesia dalam pemberdayaan UMKM dan penciptaan peluang kerja di Indonesia melalui inovasi dan teknologi.</p>
             </div>
 
-            {{-- Values --}}
-            <div class="bg-white p-6 rounded shadow">
-                <div class="mb-4">
-                    <svg class="w-14 h-14 text-yellow-600" fill="currentColor" viewBox="0 0 16 16">...</svg>
-                </div>
-                <h4 class="text-xl font-semibold mb-2">Values Statement</h4>
-                <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-            </div>
-        </div>
-    </div>
-</section>
-
+            
 {{-- Statistik --}}
 <section class="py-16">
     <div class="container mx-auto px-6 grid md:grid-cols-3 gap-6 text-center">

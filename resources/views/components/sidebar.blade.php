@@ -391,14 +391,14 @@
           <!-- Menu Item Hpp -->
           <li>
             <a
-              href="calendar.html"
-              @click="selected = (selected === 'kalkulasi-harga' ? '': 'kalkulasi-harga' )"
+              href="{{ route('hpp.form') }}"
+              @click="selected = (selected === 'kalkulasi-harga' ? '' : 'kalkulasi-harga')"
               class="menu-item group"
-              :class=" (selected === 'kalkulasi-harga') && (page === 'kalkulasi-harga') ? 'menu-item-active' : 'menu-item-inactive'"
+              :class="selected === 'kalkulasi-harga' ? 'menu-item-active' : 'menu-item-inactive'"
             >
               <i class="bi bi-calculator-fill"
-                :class="(selected === 'dashboard') ? 'menu-item-icon-active' : 'menu-item-icon-inactive'" 
-                  style="font-size: 20px;"
+                :class="selected === 'kalkulasi-harga' ? 'menu-item-icon-active' : 'menu-item-icon-inactive'" 
+                style="font-size: 20px;"
               ></i>
 
               <span
@@ -409,6 +409,7 @@
               </span>
             </a>
           </li>
+
           <!-- Menu Item Calendar -->
         </ul>
       </div>

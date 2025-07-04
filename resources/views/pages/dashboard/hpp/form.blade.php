@@ -6,11 +6,15 @@
 
 <div class="max-w-5xl mx-auto p-6">
   <div class="card">
-    <h1 class="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">Form Perhitungan HPP Produk</h1>
+    <h1 class="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">
+      Form Kalkulasi HPP
+    </h1>
 
     {{-- Jumlah Produksi --}}
     <div class="mb-6">
-      <label for="jumlahProduksi" class="form-label">Jumlah Unit Produksi (maksimal 500):</label>
+      <label for="jumlahProduksi" class="form-label">
+        Jumlah Unit Produksi (maksimal 500):
+      </label>
       <input type="number" id="jumlahProduksi" value="1" min="1" max="500" class="form-control">
     </div>
 
@@ -22,21 +26,21 @@
       <h2 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Harga Jual</h2>
 
       <label class="form-label">Kategori Produk:</label>
-
       <div x-data="{ isOptionSelected: false }" class="relative z-20 bg-transparent mb-1.5">
         <select
-        id="kategoriMarkup"
-        class="form-select"
-        :class="isOptionSelected && 'text-gray-800 dark:text-white/90'"
-        @change="isOptionSelected = true">
-        <option class="option-select" value="">-- Pilih Kategori --</option>
-        <option class="option-select" value="makanan_berat">Makanan Berat (100% – 200%)</option>
-        <option class="option-select" value="camilan">Camilan / Snack (150% – 300%)</option>
-        <option class="option-select" value="minuman">Minuman (200% – 400%)</option>
-        <option class="option-select" value="frozen">Frozen Food (30% – 100%)</option>
-        <option class="option-select" value="roti">Roti / Kue (100% – 250%)</option>
-        <option class="option-select" value="catering">Catering / Pesanan Khusus (50% – 150%)</option>
-      </select> 
+          id="kategoriMarkup"
+          class="form-select"
+          :class="isOptionSelected && 'text-gray-800 dark:text-white/90'"
+          @change="isOptionSelected = true"
+        >
+          <option class="option-select" value="">-- Pilih Kategori --</option>
+          <option class="option-select" value="makanan_berat">Makanan Berat (100% – 200%)</option>
+          <option class="option-select" value="camilan">Camilan / Snack (150% – 300%)</option>
+          <option class="option-select" value="minuman">Minuman (200% – 400%)</option>
+          <option class="option-select" value="frozen">Frozen Food (30% – 100%)</option>
+          <option class="option-select" value="roti">Roti / Kue (100% – 250%)</option>
+          <option class="option-select" value="catering">Catering / Pesanan Khusus (50% – 150%)</option>
+        </select> 
       </div>
 
       <label class="form-label">Markup (%):</label>
@@ -109,7 +113,9 @@
         <div class="mb-6">
           <h2 class="form-label">${nama}</h2>
           <div id="${nama}-items" class="space-y-2 mb-2"></div>
-          <button type="button" onclick="tambahItem('${nama}')" class="button bg-blue-200 button-sm text-dark">+ Tambah Item</button>
+          <button type="button" onclick="tambahItem('${nama}')" class="button bg-blue-200 button-sm text-dark">
+            + Tambah Item
+          </button>
         </div>
       `);
       if (nama === 'Bahan Baku') tambahItem(nama); // Wajib ada
@@ -138,7 +144,9 @@
         <input type="number" placeholder="Qty" min="0" class="form-control w-24">
         ${satuanInput}
         <input type="text" placeholder="Harga Satuan" class="form-control w-36 harga">
-        <button type="button" onclick="this.parentElement.remove()" class="bg-red-500 button hover:bg-red-600 text-white">Hapus</button>
+        <button type="button" onclick="this.parentElement.remove()" class="bg-red-500 button hover:bg-red-600 text-white">
+          Hapus
+        </button>
       </div>
     `);
   }
@@ -186,7 +194,11 @@
     const hargaJual = hppSatuan * (1 + markup / 100);
 
     localStorage.setItem('hpp_result', JSON.stringify({
-      total, hppSatuan, hargaJual, ringkasan, jumlahProduksi: jumlah
+      total,
+      hppSatuan,
+      hargaJual,
+      ringkasan,
+      jumlahProduksi: jumlah
     }));
 
     window.location.href = "/dashboard/hpp/hasil";
@@ -199,4 +211,5 @@
 
   buatForm();
 </script>
+
 @endsection
