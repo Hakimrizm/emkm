@@ -8,7 +8,7 @@
     <div class="flex justify-center items-center h-64 text-center py-35">
         <div>
             <h1 class="text-4xl font-bold mb-2">Tentang Kami</h1>
-            <p class="text-lg">Lebih kenal dengan kami agar kita saling mengenal lebih dalam tentang kami.</p>
+            <p class="text-lg">Tidak kenal, maka tidak sayang. Mari berkenalan dengan team kami.</p>
         </div>
     </div>
 </section>
@@ -17,9 +17,11 @@
 <section class="py-16">
     <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <div>
-            <h1 class="text-3xl font-bold mb-4">Sejarah Kami</h1>
-            <p class="text-gray-700 text-lg mb-4">Lorem ipsum dolor sit amet... 
-                <button class="text-blue-600 underline" onclick="document.getElementById('extra-history').classList.toggle('hidden')">Baca Selengkapnya</button>
+            <h1 class="text-3xl font-bold mb-4">
+                Sejarah Kami
+            </h1>
+            <p class="text-gray-700 text-lg mb-4"> 
+                Kami tahu betul bahwa pemerintah selalu mengadakan pendanaan untuk mahasiswa yang ingin berkembang dan mempunyai ide bisnis. Dari titik ini, kami ingin membuat sebuh website yang membantu perekonomian Indonesia. E-MKM terbentuk dari inspirasi program studi yang ada di Institut Digital Ekonomi Indonesia yaitu; Teknik Informatika. Sistem Informasi, Administrasi Bisnis, dan Akuntansi. E-MKM mempunyai 2 target utaa, yaiut membantu UMKM di Indonesia dan mengurangkan angka pengangguran bagi <span class="italic"> fresh graduate</span>.
             </p>
             <div id="extra-history" class="text-gray-600 hidden">
                 Konten tambahan sejarah yang muncul saat klik baca selengkapnya.
