@@ -1,5 +1,4 @@
-@extends('layouts.print')
-
+@extends('layouts.dashboard')
 @section('title', 'Print HPP')
 
 @section('content')

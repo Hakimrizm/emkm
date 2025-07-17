@@ -18,21 +18,19 @@
 
     <!-- Konten -->
     <div class="relative z-20 flex flex-col justify-center items-center text-center h-full px-6">
-        <h1 class="text-5xl font-extrabold mb-6 leading-tight text-white">Melesatkan Bisnismu ke Level Berikutnya</h1>
-        <p class="text-lg mb-8 text-white">Bersama <span class="font-semibold">E-MKM</span>, wujudkan impian usahamu dengan teknologi terkini dan dukungan terbaik.</p>
-        <a href="{{ route('register') }}" class="inline-block bg-white text-blue-700 font-bold py-3 px-6 rounded-lg shadow hover:bg-gray-100 transition duration-200">
+        <h1 class="text-5xl font-extrabold mb-6 leading-tight text-white" data-aos="fade-down">Melesatkan Bisnismu ke Level Berikutnya</h1>
+        <p class="text-lg mb-8 text-white" data-aos="fade-up" data-aos-delay="100">Bersama <span class="font-semibold">E-MKM</span>, wujudkan impian usahamu dengan teknologi terkini dan dukungan terbaik.</p>
+        <a href="{{ route('register') }}" class="inline-block bg-white text-blue-700 font-bold py-3 px-6 rounded-lg shadow hover:bg-gray-100 transition duration-200" data-aos="zoom-in" data-aos-delay="200">
             Daftar Sekarang
         </a>
     </div>
 </section>
 
-
-
 <!-- Fitur Unggulan -->
 <section class="bg-white py-24">
     <div class="text-center mb-12">
-        <h2 class="text-4xl font-extrabold">Fitur Unggulan</h2>
-        <p class="text-gray-600 text-lg">Fitur-fitur utama yang kami tawarkan untuk membantu UMKM tumbuh dan berkembang.</p>
+        <h2 class="text-4xl font-extrabold" data-aos="fade-up">Fitur Unggulan</h2>
+        <p class="text-gray-600 text-lg" data-aos="fade-up" data-aos-delay="100">Fitur-fitur utama yang kami tawarkan untuk membantu UMKM tumbuh dan berkembang.</p>
     </div>
     <div class="grid md:grid-cols-3 gap-8 container mx-auto px-6">
         @foreach([
@@ -40,7 +38,7 @@
             ['icon' => 'bi-bar-chart-steps', 'title' => 'Lihat Laporan Otomatis', 'desc' => 'Pantau performa usahamu dengan laporan keuangan mingguan dan bulanan.'],
             ['icon' => 'bi-lightbulb-fill', 'title' => 'Belajar Manajemen Keuangan', 'desc' => 'Dapatkan edukasi praktis untuk mengelola keuangan lebih baik.']
         ] as $fitur)
-        <div class="bg-blue-50 p-6 rounded-lg shadow hover:shadow-xl transition duration-200 text-center">
+        <div class="bg-blue-50 p-6 rounded-lg shadow hover:shadow-xl transition duration-200 text-center" data-aos="fade-up">
             <div class="bg-blue-500 text-white w-14 h-14 flex items-center justify-center rounded-full mx-auto mb-4">
                 <i class="bi {{ $fitur['icon'] }} text-xl"></i>
             </div>
@@ -54,20 +52,21 @@
 <!-- Visi dan Misi -->
 <section id="tentang-kami" class="py-24 bg-gray-100">
     <div class="text-center mb-12">
-        <h2 class="text-4xl font-extrabold">Visi & Misi</h2>
-        <p class="text-gray-600 text-lg">Kenali lebih dekat misi kami membantu UMKM berkembang melalui teknologi.</p>
+        <h2 class="text-4xl font-extrabold" data-aos="fade-up">Visi & Misi</h2>
+        <p class="text-gray-600 text-lg" data-aos="fade-up" data-aos-delay="100">Kenali lebih dekat misi kami membantu UMKM berkembang melalui teknologi.</p>
     </div>
     <div class="grid md:grid-cols-2 gap-10 container mx-auto px-6">
-        <div class="bg-white p-8 rounded-lg shadow">
+        <div class="bg-white p-8 rounded-lg shadow" data-aos="fade-right">
             <h3 class="text-2xl font-bold mb-4">Visi</h3>
-            <p class="text-gray-700">Mewujudkan UMKM Indonesia untuk beradaptasi dengan era digital dan cerdas dalam mengelola keuangan usaha.</p>
+            <p class="text-gray-700">Menjadi platform digital terpercaya yang membantu UMKM Indonesia naik kelas melalui solusi teknologi dan literasi keuangan.</p>
         </div>
-        <div class="bg-white p-8 rounded-lg shadow">
+        <div class="bg-white p-8 rounded-lg shadow" data-aos="fade-left">
             <h3 class="text-2xl font-bold mb-4">Misi</h3>
             <ul class="list-disc list-inside text-gray-700 space-y-2">
-                <li>Menyediakan platform pencatatan keuangan yang mudah digunakan.</li>
-                <li>Memberikan edukasi finansial secara praktis dan relevan.</li>
-                <li>Memberdayakan UMKM agar lebih mandiri dan berdaya saing.</li>
+                <li>Menyediakan sistem pencatatan keuangan yang sederhana namun powerful.</li>
+                <li>Mengedukasi pelaku usaha kecil dengan materi relevan dan mudah dipahami.</li>
+                <li>Mendorong transformasi digital UMKM agar lebih kompetitif secara global.</li>
+                <li>Menjadi mitra strategis dalam pertumbuhan dan keberlanjutan bisnis kecil.</li>
             </ul>
         </div>
     </div>
@@ -76,14 +75,14 @@
 <!-- Testimoni Pengguna -->
 <section class="bg-white py-24">
     <div class="text-center mb-12">
-        <h2 class="text-4xl font-extrabold">Apa Kata Pengguna?</h2>
+        <h2 class="text-4xl font-extrabold" data-aos="fade-up">Apa Kata Pengguna?</h2>
     </div>
     <div class="grid md:grid-cols-2 gap-10 container mx-auto px-6">
         @foreach([
             ['img' => 'faces/5.jpg', 'name' => 'Rina Addrina', 'role' => 'CEO of Warung Sembako', 'quote' => 'Aplikasi ini sangat membantu saya mengatur keuangan warung saya. Simple dan mudah digunakan!'],
             ['img' => 'faces/1.jpg', 'name' => 'Riki Adrino', 'role' => 'CEO of Mamang Cuanki', 'quote' => 'Laporan mingguan sangat memudahkan saya evaluasi usaha. Fiturnya lengkap dan edukatif!']
         ] as $user)
-        <div class="bg-gray-100 p-6 rounded shadow">
+        <div class="bg-gray-100 p-6 rounded shadow" data-aos="fade-up">
             <p class="mb-4">&ldquo;{{ $user['quote'] }}&rdquo;</p>
             <div class="flex items-center gap-4">
                 <img src="{{ asset('/images/' . $user['img']) }}" alt="User" class="w-16 h-16 rounded-full object-cover">
@@ -100,7 +99,7 @@
 <!-- FAQ -->
 <section class="container mx-auto py-24 px-6">
     <div class="text-center mb-12">
-        <h2 class="text-4xl font-extrabold">Pertanyaan yang Sering Diajukan</h2>
+        <h2 class="text-4xl font-extrabold" data-aos="fade-up">Pertanyaan yang Sering Diajukan</h2>
     </div>
     <div class="space-y-4 max-w-3xl mx-auto">
         @foreach([
@@ -108,7 +107,7 @@
             ['q' => 'Apakah layanan ini gratis?', 'a' => 'Kami menawarkan paket gratis dengan fitur dasar, serta paket premium dengan fitur tambahan.'],
             ['q' => 'Bagaimana cara menghubungi tim support?', 'a' => 'Anda dapat menghubungi kami melalui email di support@emkm.id atau melalui fitur chat di aplikasi.']
         ] as $index => $faq)
-        <div x-data="{ open: false }" class="bg-white p-5 rounded-lg shadow">
+        <div x-data="{ open: false }" class="bg-white p-5 rounded-lg shadow" data-aos="fade-up">
             <button
                 @click="open = !open"
                 class="w-full text-left font-semibold text-lg flex justify-between items-center focus:outline-none"
@@ -143,7 +142,6 @@
         @endforeach
     </div>
 </section>
-
 
 @include('components.footer')
 @endsection
