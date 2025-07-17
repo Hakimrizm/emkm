@@ -10,11 +10,15 @@ class CreateCoaTable extends Migration
     {
         Schema::create('coa', function (Blueprint $table) {
             $table->id();
-            $table->string('kode')->unique(); // Contoh: 111, 411, 511
+            $table->string('kode')->unique(); // Contoh: 101, 201, 301, dst
             $table->string('nama');           // Contoh: Kas, Penjualan, HPP
             $table->enum('tipe', ['aset', 'kewajiban', 'modal', 'pendapatan', 'beban']);
-            $table->boolean('is_default')->default(false); // Untuk COA bawaan sistem
-            $table->unsignedBigInteger('user_id')->nullable(); // null untuk COA sistem, terisi jika custom user
+            $table->boolean('is_default')->default(false); // COA bawaan sistem atau buatan user
+
+            $table->foreignId('user_id')->nullable()
+                  ->constrained('users')
+                  ->nullOnDelete(); // jika user dihapus, user_id menjadi null
+
             $table->timestamps();
         });
     }
